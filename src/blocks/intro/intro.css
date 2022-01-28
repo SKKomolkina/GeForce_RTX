@@ -1,0 +1,150 @@
+.intro {
+    margin-top: 64px;
+    margin-bottom: 83px;
+    max-width: 1200px;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.intro__title {
+    margin-top: 47px;
+    margin-bottom: 27px;
+
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 87px;
+    color: #04488f;
+}
+
+.intro__text {
+    margin: 0;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: #222222;
+}
+
+.intro-text__wrapper {
+    max-width: 528px;
+}
+
+.intro__image {
+    max-width: 564px;
+    max-height: 584px;
+}
+
+@media (max-width: 1299px) {
+    .intro {
+        margin-top: 45px;
+        margin-bottom: 106px;
+
+        max-width: 960px;
+    }
+
+    .intro__title {
+        margin-top: 73px;
+        margin-bottom: 16px;
+
+        font-size: 64px;
+        line-height: 78px;
+    }
+
+    .intro__text {
+        font-size: 16px;
+        line-height: 23px;
+    }
+
+    .intro-text__wrapper {
+        max-width: 468px;
+    }
+
+    .intro__image {
+        max-width: 468px;
+        max-height: 485px;
+    }
+}
+
+@media (max-width: 990px) {
+    .intro {
+        margin: 60px auto 86px;
+
+        max-width: 640px;
+    }
+
+    .intro-text__wrapper {
+        max-width: 330px;
+    }
+
+    .intro__title {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        font-size: 52px;
+        line-height: 63px;
+    }
+
+    .intro__text {
+        font-size: 16px;
+        line-height: 23px;
+    }
+
+    .intro__image {
+        max-width: 309px;
+        max-height: 320px;
+    }
+}
+
+@media (max-width: 699px) {
+    .intro {
+        margin-top: 37px;
+        margin-bottom: 101px;
+        max-width: 440px;
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .intro__title {
+        margin-bottom: 18px;
+
+        font-size: 48px;
+        line-height: 58px;
+        text-align: center;
+    }
+
+    .intro__text {
+        margin-bottom: 53px;
+
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 468px) {
+    .intro {
+        margin-top: 15px;
+        margin-bottom: 59px;
+
+        max-width: 300px;
+    }
+
+    .intro__title {
+        font-size: 32px;
+        line-height: 39px;
+    }
+
+    .intro__text {
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .intro__image {
+        max-width: 313px;
+        max-height: 270px;
+    }
+}

@@ -1,0 +1,30 @@
+@font-face {
+    src: url('Montserrat-Regular.ttf') format('truetype');
+    font-family: 'Montserrat';
+    font-weight: 400;
+}
+
+@font-face {
+    src: url('Montserrat-SemiBold.ttf') format('truetype');
+    font-family: 'Montserrat';
+    font-weight: 600;
+}
+
+@font-face {
+    src: url('Montserrat-Bold.ttf') format('truetype');
+    font-family: 'Montserrat';
+    font-weight: 700;
+}
+
+/*@font-face {*/
+/*    src: url('Inter-Bold.woff2') format('woff2'), url('Inter-Bold.woff') format('woff');*/
+/*    font-family: 'Inter';*/
+/*    font-size: 700;*/
+/*    font-weight: bold;*/
+/*}*/
+/*@font-face {*/
+/*    src: url('Inter-Black.woff2') format('woff2'), url('Inter-Black.woff') format('woff');*/
+/*    font-family: 'Inter';*/
+/*    font-size: 900;*/
+/*    font-weight: bold;*/
+/*}*/
