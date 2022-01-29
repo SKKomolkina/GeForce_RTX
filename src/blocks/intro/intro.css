@@ -59,7 +59,7 @@
     }
 
     .intro-text__wrapper {
-        max-width: 468px;
+        max-width: 455px;
     }
 
     .intro__image {
@@ -71,7 +71,6 @@
 @media (max-width: 990px) {
     .intro {
         margin: 60px auto 86px;
-
         max-width: 640px;
     }
 

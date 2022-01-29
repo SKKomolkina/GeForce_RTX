@@ -1,0 +1,399 @@
+.games-rating {
+    margin: 0;
+    padding: 0;
+    height: 302px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    align-self: center;
+}
+
+.games-rating__description {
+    margin-top: 63px;
+
+    align-self: center;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.games-rating__description-wrapper {
+    margin-right: 10px;
+    width: 387px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.games-rating__description-wrapper:last-child {
+    margin: 0;
+}
+
+.games-rating__description-text {
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #53575A;
+}
+
+#rtx-3060 {
+    margin-right: 10px;
+    width: 56px;
+    height: 16px;
+
+    background-color: #04488f;
+}
+
+#gtx-1660 {
+    margin-right: 10px;
+    width: 56px;
+    height: 16px;
+
+    background-color: #a3b1d7;
+}
+
+.games-rating__list {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    list-style-type: none;
+}
+
+.games-rating__list:first-child {
+    width: 196px;
+    margin-right: 10px;
+}
+
+.games-rating__item {
+    margin: 0;
+    padding: 0;
+    height: 39px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.games-rating__numbers {
+    margin: 0;
+    padding: 0;
+}
+
+.games-rating__item:last-child {
+    margin: 0;
+}
+
+.games-rating__name {
+    margin: 0;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: #04488f;
+}
+
+.games-rating__blue-line {
+    display: block;
+    height: 16px;
+    background-color: #04488f;
+}
+
+.games-rating__blue-number {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 20px;
+    color: #04488f;
+}
+
+.games-rating__gray-line {
+    height: 16px;
+    background-color: #a3b1d7;
+}
+
+.games-rating__gray-number {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 20px;
+    color: #a3b1d7;
+}
+
+.games-rating__lines {
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.blue-rating {
+    margin-bottom: 4px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.games-rating__blue-number {
+    margin-left: 10px;
+}
+
+.gray-rating {
+    display: flex;
+    flex-direction: row;
+}
+
+.games-rating__gray-number {
+    margin-left: 10px;
+}
+
+#days-118 {
+    width: 521px;
+}
+
+#days-69 {
+    width: 302px;
+}
+
+#cyber-78 {
+    width: 369px;
+}
+
+#cyber-43 {
+    width: 214px;
+}
+
+#wot-230 {
+    width: 744px;
+}
+
+#wot-128 {
+    width: 586px;
+}
+
+#valhalla-69 {
+    width: 302px;
+}
+
+#valhalla-50 {
+    width: 231px;
+}
+
+#odyssey-88 {
+    width: 424px;
+}
+
+#odyssey-52 {
+    width: 241px;
+}
+
+@media (max-width: 1300px) {
+    .games-rating {
+        max-width: 960px;
+    }
+
+    .games-rating__item:first-child {
+        max-width: 144px;
+    }
+
+    .games-rating__name {
+        font-size: 16px;
+        line-height: 23px;
+    }
+
+    #wot-230 {
+        width: 716px;
+    }
+
+    .games-rating__description {
+        margin-top: 52px;
+    }
+
+    .games-rating__description-text {
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .games-rating__blue-number {
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .games-rating__gray-number {
+        font-size: 12px;
+        line-height: 17px;
+    }
+}
+
+@media (max-width: 990px) {
+    .games-rating {
+        max-width: 640px;
+    }
+
+    #days-118 {
+        width: 346px;
+    }
+    #days-69 {
+        width: 181px;
+    }
+    #cyber-78 {
+        width: 354px;
+    }
+    #cyber-43 {
+       width: 133px;
+    }
+    #wot-230 {
+        width: 436px;
+    }
+    #wot-128 {
+        width: 267px;
+    }
+    #valhalla-69 {
+        width: 221px;
+    }
+    #valhalla-50 {
+        width: 191px;
+    }
+    #odyssey-88 {
+        width: 241px;
+    }
+    #odyssey-52 {
+        width: 199px;
+    }
+
+    .games-rating__description {
+        margin-top: 38px;
+    }
+
+    .games-rating__description-wrapper {
+        max-width: 264px;
+    }
+
+    .games-rating__description-wrapper:first-child {
+        margin-right: 24px;
+    }
+}
+
+@media (max-width: 699px) {
+    .games-rating {
+        max-width: 440px;
+    }
+
+    .games-rating__name {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .games-rating__list:first-child {
+        max-width: 119px;
+    }
+
+    #days-118 {
+        width: 164px;
+    }
+    #days-69 {
+        width: 110px;
+    }
+    #cyber-78 {
+        width: 127px;
+    }
+    #cyber-43 {
+        width: 76px;
+    }
+    #wot-230 {
+        width: 268px;
+    }
+    #wot-128 {
+        width: 179px;
+    }
+    #valhalla-69 {
+        width: 110px;
+    }
+    #valhalla-50 {
+        width: 96px;
+    }
+    #odyssey-88 {
+        width: 157px;
+    }
+    #odyssey-52 {
+        width: 89px;
+    }
+
+    .games-rating__description-wrapper {
+        max-width: 210px;
+    }
+
+    .games-rating__description-wrapper:first-child {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 468px) {
+    .games-rating {
+        max-width: 300px;
+    }
+
+    #days-118 {
+        width: 114px;
+    }
+    #days-69 {
+        width: 73px;
+    }
+    #cyber-78 {
+        width: 96px;
+    }
+    #cyber-43 {
+        width: 55px;
+    }
+    #wot-230 {
+        width: 158px;
+    }
+    #wot-128 {
+        width: 100px;
+    }
+    #valhalla-69 {
+        width: 69px;
+    }
+    #valhalla-50 {
+        width: 62px;
+    }
+    #odyssey-88 {
+        width: 82px;
+    }
+    #odyssey-52 {
+        width: 65px;
+    }
+
+    #rtx-3060 {
+        width: 16px;
+        flex-shrink: 0;
+    }
+    #gtx-1660 {
+        width: 16px;
+        flex-shrink: 0;
+    }
+
+    .games-rating__description {
+        margin-top: 26px;
+    }
+
+    .games-rating__description-wrapper {
+        max-width: 145px;
+    }
+
+    .games-rating__description-wrapper:first-child {
+        margin-right: 10px;
+    }
+}
