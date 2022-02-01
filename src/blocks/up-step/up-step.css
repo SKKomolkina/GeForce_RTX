@@ -1,0 +1,164 @@
+.up-step {
+    padding-top: 70px;
+    padding-bottom: 93px;
+
+    width: 1920px;
+    margin-left: -30%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #fbfbfb;
+}
+
+.up-step__wrapper {
+    width: 1200px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.up-step__title {
+    margin: 0 0 16px;
+
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 52px;
+    color: #000;
+    text-align: left;
+}
+
+.up-step__subtitle {
+    max-width: 509px;
+    margin: 0 0 15px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+}
+
+.up-step__image {
+    max-width: 1158px;
+
+    align-self: center;
+}
+
+@media (max-width: 1300px) {
+    .up-step {
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        margin-left: -18%;
+
+        width: 1300px;
+    }
+
+    .up-step__wrapper {
+        width: 960px;
+    }
+
+    .up-step__title {
+        margin-bottom: 24px;
+
+        font-size: 32px;
+    }
+
+    .up-step__subtitle {
+        max-width: 714px;
+
+        font-size: 12px;
+    }
+
+    .up-step__image {
+        max-width: 947px;
+    }
+}
+
+@media (max-width: 990px) {
+    .up-step {
+        margin-left: -27%;
+
+        width: 990px;
+    }
+
+    .up-step__wrapper {
+        width: 640px;
+    }
+
+    .up-step__subtitle {
+        max-width: 640px;
+        margin-bottom: 18px;
+    }
+
+    .up-step__image {
+        max-width: 634px;
+    }
+}
+
+@media (max-width: 739px) {
+    .up-step {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 699px) {
+    .up-step {
+
+    }
+
+    .up-step__wrapper {
+        width: 440px;
+
+        align-items: center;
+    }
+
+    .up-step__title {
+        margin-bottom: 14px;
+
+        font-size: 24px;
+        line-height: 34px;
+
+        text-align: center;
+    }
+
+    .up-step__subtitle {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .up-step__image {
+        max-width: 332px;
+    }
+}
+
+@media (max-width: 468px) {
+    .up-step {
+        padding-bottom: 11px;
+    }
+
+    .up-step__wrapper {
+        max-width: 300px;
+    }
+
+    .up-step__image {
+        max-width: 270px;
+    }
+
+    .up-step__title {
+        margin-bottom: 14px;
+
+        font-size: 18px;
+        line-height: 16px;
+    }
+
+    .up-step__subtitle {
+        margin-bottom: 25px;
+
+        font-size: 12px;
+        line-height: 17px;
+    }
+}

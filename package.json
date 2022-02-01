@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/SKKomolkina/GeForce_RTX/issues"
   },
-  "homepage": "https://github.com/SKKomolkina/GeForce_RTX#readme",
+  "homepage": "https://github.com/SKKomolkina/GeForce_RTX",
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@babel/preset-env": "^7.16.5",

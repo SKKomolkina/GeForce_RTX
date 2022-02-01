@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
     <title>GeForce RTX</title>
 </head>
 
@@ -189,7 +194,109 @@
                 </div>
             </div>
         </section>
+
+        <section class="up-step">
+            <div class="up-step__wrapper">
+                <h2 class="up-step__title">Качественный прирост</h2>
+                <p class="up-step__subtitle">
+                    Помимо прироста производительности относительно видеокарт предыдущих
+                    поколений решения GeForce RTX™ выводят графику и игровые возможности на
+                    качественно новый уровень
+                </p>
+
+                <img class="up-step__image"
+                     src="<%=require('./images/up-step.svg')%>" alt="рендеринг творчество стриминг RTX VOICE">
+            </div>
+        </section>
+
+        <section class="rays">
+            <div class="rays-flex">
+                <div class="rays__text-wrapper">
+                    <h2 class="rating__title">Трассировка лучей
+                        <span class="rating__title rating__title_span">RTXON</span>
+                    </h2>
+                    <p class="rating__subtitle">
+                        Невероятно реалистичная графика с помощью трассировки лучей в реальном времени,
+                        которая моделирует естественное поведение света, отражений и теней в ПК-играх.
+                        Качественно новый уровень детализации в игровых мирах.
+                    </p>
+
+                    <div class="rays__input-wrapper">
+                        <p class="rays__input-text">
+                            Нажми для включения лучей
+                        </p>
+
+                        <label class="checkbox">
+                            <input class="checkbox-input checkbox-invisible" type="checkbox">
+                            <!--                        <span class="checkbox-visible__text">on</span>-->
+                            <span class="checkbox-visible">
+                            <span class="checkbox-visible__text checkbox-visible__text_off">off</span>
+                            <span class="checkbox-visible__text checkbox-visible__text_on">on</span>
+                        </span>
+
+                        </label>
+                    </div>
+                </div>
+
+                <img id="preview"
+                     class="rays__image-preview"
+                     src="<%=require('./images/rays/cyberpunk-rtx-off.jpg')%>"
+                     alt="preview"
+                >
+            </div>
+
+            <div class="rays__images-wrapper">
+                <img id="metro"
+                     class="rays__image"
+                     src="<%=require('./images/rays/metro-off.jpg')%>"
+                     alt="metro"
+                >
+                <img id="doom"
+                     class="rays__image"
+                     src="<%=require('./images/rays/doom-off.jpg')%>"
+                     alt="doom"
+                >
+                <img id="minecraft"
+                     class="rays__image"
+                     src="<%=require('./images/rays/minecraft-rtx-off-2.jpg')%>"
+                     alt="minecraft"
+                >
+                <img id="cyberpunk"
+                     class="rays__image"
+                     src="<%=require('./images/rays/cyberpunk-rtx-off.jpg')%>"
+                     alt="cyberpunk"
+                >
+            </div>
+        </section>
     </main>
+</div>
+
+<div class="popup">
+    <div class="popup-image popup-image_off swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img class="popup-image__image" src="<%=require('./images/rays/cyberpunk-rtx-off.jpg')%>"
+                     alt="cyberpunk">
+            </div>
+            <div class="swiper-slide">
+                <img class="popup-image__image" src="<%=require('./images/rays/metro-off.jpg')%>"
+                     alt="metro">
+            </div>
+            <div class="swiper-slide">
+                <img class="popup-image__image" src="<%=require('./images/rays/doom-off.jpg')%>"
+                     alt="doom">
+            </div>
+            <div class="swiper-slide">
+                <img class="popup-image__image" src="<%=require('./images/rays/minecraft-rtx-off-2.jpg')%>"
+                     alt="minecraft">
+            </div>
+        </div>
+
+        <div class="swiper-button-next">
+        </div>
+        <div class="swiper-button-prev">
+        </div>
+    </div>
 </div>
 </body>
 

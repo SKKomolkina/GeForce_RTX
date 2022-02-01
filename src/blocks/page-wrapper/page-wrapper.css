@@ -2,7 +2,7 @@
     padding-top: 31px;
     margin-right: 0;
 
-    background: url('../../images/1920-back.svg') no-repeat right top;
+    background: url('../../images/backgrounds/1920-back.svg') no-repeat right top;
     background-size: 100%;
 }
 
@@ -19,13 +19,13 @@
 
 @media (max-width: 1300px) {
     .page-wrapper {
-        background: url('../../images/1300-back.svg') no-repeat right top;
+        background: url('../../images/backgrounds/1300-back.svg') no-repeat right top;
     }
 }
 
 @media (max-width: 990px) {
     .page-wrapper {
-        background: url('../../images/990-back.svg') no-repeat top right;
+        background: url('../../images/backgrounds/990-back.svg') no-repeat top right;
     }
 
     .page-wrapper__main {
@@ -42,7 +42,7 @@
 
 @media (max-width: 699px) {
     .page-wrapper {
-        background: url('../../images/699-back.svg') no-repeat top right;
+        background: url('../../images/backgrounds/699-back.svg') no-repeat top right;
     }
 
 
@@ -51,6 +51,6 @@
 @media (max-width: 468px) {
     .page-wrapper {
         padding-top: 20px;
-        background: url('../../images/468-back.svg') no-repeat top right;
+        background: url('../../images/backgrounds/468-back.svg') no-repeat top right;
     }
 }
