@@ -12803,53 +12803,59 @@ var imagesArray = {
     off: _images_rays_minecraft_rtx_off_2_jpg__WEBPACK_IMPORTED_MODULE_9__
   }
 };
+var indexOfImages = {
+  'metro': 0,
+  'doom': 1,
+  'minecraft': 2,
+  'cyberpunk': 3
+};
 var cyberpunk = document.querySelector('#cyberpunk');
 var metro = document.querySelector('#metro');
 var doom = document.querySelector('#doom');
 var minecraft = document.querySelector('#minecraft');
+var cyberpunkSwiper = document.querySelector('#cyberpunk-swiper');
+var metroSwiper = document.querySelector('#metro-swiper');
+var doomSwiper = document.querySelector('#doom-swiper');
+var minecraftSwiper = document.querySelector('#minecraft-swiper');
 var preview = document.querySelector('.rays__image-preview');
 var popup = document.querySelector('.popup');
 var slide = popup.querySelector('.swiper-slide');
 var checkBox = document.querySelector('input[type="checkbox"]');
-var chosenImage = cyberpunk.id; // change preview
+var chosenMiniImage = cyberpunk.id; //
+// change preview
 
 document.querySelectorAll('.rays__image').forEach(function (item) {
   item.addEventListener('click', function () {
     preview.src = item.src;
-    chosenImage = item.id;
-    console.log(item);
+    chosenMiniImage = item.id;
   });
-}); //checkbox
+}); //
+//checkbox
 
 checkBox.addEventListener('change', function () {
   if (checkBox.checked) {
-    preview.src = imagesArray[chosenImage]['on'];
-    cyberpunk.src = _images_rays_cyberpunk_rtx_on_jpg__WEBPACK_IMPORTED_MODULE_2__;
-    metro.src = _images_rays_metro_on_jpg__WEBPACK_IMPORTED_MODULE_4__;
-    doom.src = _images_rays_doom_on_jpg__WEBPACK_IMPORTED_MODULE_6__;
-    minecraft.src = _images_rays_minecraft_rtx_on_2_jpg__WEBPACK_IMPORTED_MODULE_8__;
-  } else {
-    preview.src = imagesArray[chosenImage]['off'];
+    preview.src = imagesArray[chosenMiniImage]['off'];
     cyberpunk.src = _images_rays_cyberpunk_rtx_off_jpg__WEBPACK_IMPORTED_MODULE_3__;
     metro.src = _images_rays_metro_off_jpg__WEBPACK_IMPORTED_MODULE_5__;
     doom.src = _images_rays_doom_off_jpg__WEBPACK_IMPORTED_MODULE_7__;
     minecraft.src = _images_rays_minecraft_rtx_off_2_jpg__WEBPACK_IMPORTED_MODULE_9__;
   }
-}); //swiper
 
-var swiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper', {
-  slidesPerView: 1,
-  // spaceBetween: 350,
-  modules: [swiper__WEBPACK_IMPORTED_MODULE_1__.Navigation],
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
+  if (!checkBox.checked) {
+    preview.src = imagesArray[chosenMiniImage]['on'];
+    cyberpunk.src = _images_rays_cyberpunk_rtx_on_jpg__WEBPACK_IMPORTED_MODULE_2__;
+    metro.src = _images_rays_metro_on_jpg__WEBPACK_IMPORTED_MODULE_4__;
+    doom.src = _images_rays_doom_on_jpg__WEBPACK_IMPORTED_MODULE_6__;
+    minecraft.src = _images_rays_minecraft_rtx_on_2_jpg__WEBPACK_IMPORTED_MODULE_8__;
   }
-}); // popup
+}); //
+// popup
 
 preview.addEventListener('click', function () {
   popup.classList.add('popup_opened');
-  popup.querySelector('.popup-image__image').src = preview.src;
+  changeSwiperImages();
+  swiper.activeIndex = indexOfImages[chosenMiniImage];
+  console.log(swiper.activeIndex);
 });
 popup.addEventListener('click', function (e) {
   document.addEventListener('click', function (e) {
@@ -12862,6 +12868,33 @@ popup.addEventListener('click', function (e) {
       popup.classList.remove('popup_opened');
     }
   });
+});
+
+function changeSwiperImages() {
+  // swiper.activeIndex = chosenPreviewImage;
+  cyberpunkSwiper.src = _images_rays_cyberpunk_rtx_off_jpg__WEBPACK_IMPORTED_MODULE_3__;
+  metroSwiper.src = _images_rays_metro_off_jpg__WEBPACK_IMPORTED_MODULE_5__;
+  doomSwiper.src = _images_rays_doom_off_jpg__WEBPACK_IMPORTED_MODULE_7__;
+  minecraftSwiper.src = _images_rays_minecraft_rtx_off_2_jpg__WEBPACK_IMPORTED_MODULE_9__;
+
+  if (!checkBox.checked) {
+    cyberpunkSwiper.src = _images_rays_cyberpunk_rtx_on_jpg__WEBPACK_IMPORTED_MODULE_2__;
+    metroSwiper.src = _images_rays_metro_on_jpg__WEBPACK_IMPORTED_MODULE_4__;
+    doomSwiper.src = _images_rays_doom_on_jpg__WEBPACK_IMPORTED_MODULE_6__;
+    minecraftSwiper.src = _images_rays_minecraft_rtx_on_2_jpg__WEBPACK_IMPORTED_MODULE_8__;
+  }
+} //
+//swiper
+
+
+var swiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper', {
+  slidesPerView: 1,
+  // spaceBetween: 350,
+  modules: [swiper__WEBPACK_IMPORTED_MODULE_1__.Navigation],
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  }
 });
 })();
 
