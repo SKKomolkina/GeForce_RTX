@@ -25,6 +25,25 @@
     align-items: center;
 }
 
+.swiper-button-prev {
+    color: black;
+}
+
+.swiper-button-next {
+    color: black;
+}
+
+.swiper-pagination-bullet {
+    width: 11px;
+    height: 11px;color: #c4c4c4;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #04488f;
+    width: 15px;
+    height: 15px;
+}
+
 /*.swiper-button-next {*/
 /*    position: absolute;*/
 /*    top: 50px;*/

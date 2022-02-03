@@ -18,11 +18,12 @@
     <header class="header">
         <div class="header__icons">
             <a class="header__icon-link" href="https://www.kfa2.com/kfa2_ru/" target="_blank">
-                <img class="header__logo" src="<%=require('./images/logo-header.svg')%>" alt="KFA2">
+                <img class="header__logo" src="<%=require('./images/header/logo-header.svg')%>" alt="KFA2">
             </a>
 
             <a class="header__icon-link">
-                <img class="header__geforce" src="<%=require('./images/RTX-header.png')%>" alt="NVIDIA GeForce RTX">
+                <img class="header__geforce" src="<%=require('./images/header/RTX-header.png')%>"
+                     alt="NVIDIA GeForce RTX">
             </a>
         </div>
 
@@ -43,7 +44,7 @@
                 </p>
             </div>
 
-            <img class="intro__image" src="<%=require('./images/intro-pc.png')%>" alt="ПЕРЕХОД НА НОВЫЙ УРОВЕНЬ">
+            <img class="intro__image" src="<%=require('./images/intro/image.png')%>" alt="ПЕРЕХОД НА НОВЫЙ УРОВЕНЬ">
         </section>
 
         <section class="rating">
@@ -63,7 +64,7 @@
 
             <!--IMAGE-->
             <div class="rating__image-wrapper">
-                <img class="rating__image" src="<%=require('./images/rating.png')%>"
+                <img class="rating__image" src="<%=require('./images/rating/image.png')%>"
                      alt="видеокарта KFA2 на базе GeForce RTX™ 3060 Ti">
 
                 <div class="rating__blue-rectangle">
@@ -205,7 +206,7 @@
                 </p>
 
                 <img class="up-step__image"
-                     src="<%=require('./images/up-step.svg')%>" alt="рендеринг творчество стриминг RTX VOICE">
+                     src="<%=require('./images/up-step/image.svg')%>" alt="рендеринг творчество стриминг RTX VOICE">
             </div>
         </section>
 
@@ -271,6 +272,126 @@
                 >
             </div>
         </section>
+
+        <section class="dlss">
+            <div class="dlss-text__wrapper">
+                <h2 class="dlss__title">DLSS в ваших <span class="dlss__title dlss__title_span">любимых играх</span>
+                </h2>
+                <p class="dlss__subtitle">
+                    Технология DLSS доступна в различных играх: от блокбастеров, таких как
+                    Cyberpunk 2077, Watch Dogs: Legion и Fortnite, до инди-игр, таких как
+                    Pumpkin Jack. Список доступных игр постоянно пополняется.
+                </p>
+            </div>
+
+            <div class="dlss__swiper swiper-dlss">
+                <ul class="dlss__list swiper-wrapper">
+                    <li class="dlss__list-item swiper-slide">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 1.png')%>">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 2.png')%>">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 3.png')%>">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 4.png')%>">
+                    </li>
+                    <li class="dlss__list-item swiper-slide">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 5.png')%>">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 6.png')%>">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 7.png')%>">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 8.png')%>">
+                    </li>
+                    <li class="dlss__list-item swiper-slide">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 9.png')%>">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 10.png')%>">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 11.png')%>">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 12.png')%>">
+                    </li>
+                    <li class="dlss__list-item swiper-slide">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 13.png')%>">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 14.png')%>">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 15.png')%>">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 16.png')%>"></li>
+                    <li class="dlss__list-item swiper-slide">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 17.png')%>">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 18.png')%>">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 19.png')%>">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 20.png')%>">
+                    </li>
+                    <li class="dlss__list-item swiper-slide">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 21.png')%>">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 22.png')%>">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 23.png')%>">
+                        <img class="dlss__image" src="<%=require('./images/dlss/logo 24.png')%>">
+                    </li>
+                </ul>
+
+                <div style="bottom: -30px" class="swiper-pagination"></div>
+            </div>
+
+            <div class="dlss__games-preview">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 1.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 2.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 3.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 4.png')%>">
+            </div>
+            <div class="dlss__games-preview dlss__games-preview_hidden">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 5.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 6.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 7.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 8.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 9.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 10.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 11.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 12.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 13.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 14.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 15.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 16.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 17.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 18.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 19.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 20.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 21.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 22.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 23.png')%>">
+                <img class="dlss__games-image" src="<%=require('./images/dlss/logo 24.png')%>">
+            </div>
+
+            <button class="dlss__button" type="button">Показать полностью</button>
+        </section>
+
+        <section class="video">
+            <div class="dlss-text__wrapper">
+                <h2 class="dlss__title">NVIDIA <span class="dlss__title dlss__title_span">DLSS</span></h2>
+                <p class="video__subtitle">
+                    Сглаживание с алгоритмами глубокого обучения – это революционная технология
+                    рендеринга на базе ИИ, которая обеспечивает новый уровень качества графики при
+                    помощи тензорных ядер в видеокартах GeForce RTX™. DLSS ускоряет частоту кадров и
+                    одновременно улучшает качество картинки в играх, используя глубокую нейросеть.
+                    Технология обеспечивает производительность, позволяющую выкрутить настройки трассировки
+                    лучей и разрешение на максимум.
+                </p>
+            </div>
+
+            <iframe class="" width="1200" height="674" src="https://www.youtube.com/embed/K8DddlREHEE"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </section>
+
+        <!--        <section class="fast-and-easy">-->
+        <!--            <div class="fast-and-easy-text__wrapper">-->
+        <!--                <h2 class="fast-and-easy__title">Быстро и легко</h2>-->
+        <!--                <p class="fast-and-easy__subtitle">-->
+        <!--                    Записывайте и делитесь с друзьями своими видео, скриншотами-->
+        <!--                    и прямыми трансляциями игрового процесса. Своевременно обновляйте-->
+        <!--                    драйверы и оптимизируйте игровые настройки. GeForce Experience™ поможет-->
+        <!--                    вам во всем этом. Это отличное приложение-компаньон для вашей видеокарты-->
+        <!--                    GeForce®.-->
+        <!--                </p>-->
+        <!--            </div>-->
+
+        <!--            <img class="fast-and-easy__image" src="<%=require('./images/fast-and-easy/image.png')%>" alt="GeForce Experience™">-->
+        <!--        </section>-->
     </main>
 </div>
 

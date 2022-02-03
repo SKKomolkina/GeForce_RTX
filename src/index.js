@@ -1,5 +1,5 @@
 import './index.css';
-import Swiper, {Navigation} from "swiper";
+import Swiper, {Navigation, Pagination} from "swiper";
 
 import cyberpunkOn from './images/rays/cyberpunk-rtx-on.jpg';
 import cyberpunkOff from './images/rays/cyberpunk-rtx-off.jpg';
@@ -41,6 +41,7 @@ const preview = document.querySelector('.rays__image-preview');
 const popup = document.querySelector('.popup');
 const slide = popup.querySelector('.swiper-slide');
 const checkBox = document.querySelector('input[type="checkbox"]');
+const buttonShowAll = document.querySelector('.dlss__button');
 
 let chosenMiniImage = cyberpunk.id;
 
@@ -102,10 +103,10 @@ popup.addEventListener('click', (e) => {
 
 function changeSwiperImages() {
     // swiper.activeIndex = chosenPreviewImage;
-        cyberpunkSwiper.src = cyberpunkOff;
-        metroSwiper.src = metroOff;
-        doomSwiper.src = doomOff;
-        minecraftSwiper.src = minecraftOff;
+    cyberpunkSwiper.src = cyberpunkOff;
+    metroSwiper.src = metroOff;
+    doomSwiper.src = doomOff;
+    minecraftSwiper.src = minecraftOff;
 
     if (!checkBox.checked) {
         cyberpunkSwiper.src = cyberpunkOn;
@@ -116,13 +117,46 @@ function changeSwiperImages() {
 }
 
 //
+// button
+let buttonToOpen = false;
+
+buttonShowAll.addEventListener('click', () => {
+    toggleShowGames();
+});
+
+function toggleShowGames() {
+    if (!buttonToOpen) {
+        document.querySelector('.dlss__games-preview_hidden').style.display = 'flex';
+        buttonShowAll.innerHTML = 'Скрыть';
+        return buttonToOpen = true;
+    }
+    if (buttonToOpen) {
+        document.querySelector('.dlss__games-preview_hidden').style.display = 'none';
+        buttonShowAll.innerHTML = 'Показать полностью';
+        return buttonToOpen = false;
+    }
+}
+
+//
 //swiper
 const swiper = new Swiper('.swiper', {
     slidesPerView: 1,
     loop: true,
     modules: [Navigation],
+    grabCursor: true,
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     }
+});
+
+const gamesSwiper = new Swiper('.swiper-dlss', {
+    slidesPerView: 1,
+    spaceBetween: 500,
+    modules: [Pagination],
+    grabCursor: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
 });
