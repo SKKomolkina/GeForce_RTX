@@ -12821,6 +12821,7 @@ var preview = document.querySelector('.rays__image-preview');
 var popup = document.querySelector('.popup');
 var slide = popup.querySelector('.swiper-slide');
 var checkBox = document.querySelector('input[type="checkbox"]');
+var buttonShowAll = document.querySelector('.dlss__button');
 var chosenMiniImage = cyberpunk.id; //
 // change preview
 
@@ -12884,16 +12885,48 @@ function changeSwiperImages() {
     minecraftSwiper.src = _images_rays_minecraft_rtx_on_2_jpg__WEBPACK_IMPORTED_MODULE_8__;
   }
 } //
+// button
+
+
+var buttonToOpen = false;
+buttonShowAll.addEventListener('click', function () {
+  toggleShowGames();
+});
+
+function toggleShowGames() {
+  if (!buttonToOpen) {
+    document.querySelector('.dlss__games-preview_hidden').style.display = 'flex';
+    buttonShowAll.innerHTML = 'Скрыть';
+    return buttonToOpen = true;
+  }
+
+  if (buttonToOpen) {
+    document.querySelector('.dlss__games-preview_hidden').style.display = 'none';
+    buttonShowAll.innerHTML = 'Показать полностью';
+    return buttonToOpen = false;
+  }
+} //
 //swiper
 
 
 var swiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper', {
   slidesPerView: 1,
-  // spaceBetween: 350,
+  loop: true,
   modules: [swiper__WEBPACK_IMPORTED_MODULE_1__.Navigation],
+  grabCursor: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
+  }
+});
+var gamesSwiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper-dlss', {
+  slidesPerView: 1,
+  spaceBetween: 500,
+  modules: [swiper__WEBPACK_IMPORTED_MODULE_1__.Pagination],
+  grabCursor: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true
   }
 });
 })();
