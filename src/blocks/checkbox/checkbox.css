@@ -74,3 +74,29 @@
     top: 18px;
     left: 62px;
 }
+
+@media (max-width: 990px) {
+    .checkbox-visible {
+        width: 74px;
+        height: 38px;
+    }
+
+    .checkbox-visible::before {
+        width: 28px;
+        height: 28px;
+    }
+
+    .checkbox-visible__text_off {
+        left: 7px;
+        top: 12px;
+    }
+
+    .checkbox-visible__text_on {
+        top: 12px;
+        left: 50px;
+    }
+
+    .checkbox-invisible:checked + .checkbox-visible::before {
+        left: 40px;
+    }
+}

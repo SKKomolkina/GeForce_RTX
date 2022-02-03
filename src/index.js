@@ -18,63 +18,72 @@ const imagesArray = {
     'metro': {on: metroOn, off: metroOff},
     'doom': {on: doomOn, off: doomOff},
     'minecraft': {on: minecraftOn, off: minecraftOff}
-};
+}
+
+const indexOfImages = {
+    'metro': 0,
+    'doom': 1,
+    'minecraft': 2,
+    'cyberpunk': 3,
+}
 
 const cyberpunk = document.querySelector('#cyberpunk');
 const metro = document.querySelector('#metro');
 const doom = document.querySelector('#doom');
 const minecraft = document.querySelector('#minecraft');
 
+const cyberpunkSwiper = document.querySelector('#cyberpunk-swiper');
+const metroSwiper = document.querySelector('#metro-swiper');
+const doomSwiper = document.querySelector('#doom-swiper');
+const minecraftSwiper = document.querySelector('#minecraft-swiper');
+
 const preview = document.querySelector('.rays__image-preview');
 const popup = document.querySelector('.popup');
 const slide = popup.querySelector('.swiper-slide');
 const checkBox = document.querySelector('input[type="checkbox"]');
 
-let chosenImage = cyberpunk.id;
+let chosenMiniImage = cyberpunk.id;
 
+//
 // change preview
 document.querySelectorAll('.rays__image').forEach((item) => {
     item.addEventListener('click', () => {
         preview.src = item.src;
-        chosenImage = item.id;
-        console.log(item);
+        chosenMiniImage = item.id;
     });
 });
 
+//
 //checkbox
 checkBox.addEventListener('change', () => {
     if (checkBox.checked) {
-        preview.src = imagesArray[chosenImage]['on'];
-
-        cyberpunk.src = cyberpunkOn;
-        metro.src = metroOn;
-        doom.src = doomOn;
-        minecraft.src = minecraftOn;
-    } else {
-        preview.src = imagesArray[chosenImage]['off'];
+        preview.src = imagesArray[chosenMiniImage]['off'];
 
         cyberpunk.src = cyberpunkOff;
         metro.src = metroOff;
         doom.src = doomOff;
         minecraft.src = minecraftOff;
     }
-});
+    if (!checkBox.checked) {
+        preview.src = imagesArray[chosenMiniImage]['on'];
 
-//swiper
-const swiper = new Swiper('.swiper', {
-    slidesPerView: 1,
-    // spaceBetween: 350,
-    modules: [Navigation],
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        cyberpunk.src = cyberpunkOn;
+        metro.src = metroOn;
+        doom.src = doomOn;
+        minecraft.src = minecraftOn;
     }
 });
 
+//
 // popup
 preview.addEventListener('click', () => {
     popup.classList.add('popup_opened');
-    popup.querySelector('.popup-image__image').src = preview.src;
+
+    changeSwiperImages();
+
+    swiper.activeIndex = indexOfImages[chosenMiniImage];
+
+    console.log(swiper.activeIndex);
 });
 
 popup.addEventListener('click', (e) => {
@@ -89,4 +98,31 @@ popup.addEventListener('click', (e) => {
             popup.classList.remove('popup_opened');
         }
     });
+});
+
+function changeSwiperImages() {
+    // swiper.activeIndex = chosenPreviewImage;
+        cyberpunkSwiper.src = cyberpunkOff;
+        metroSwiper.src = metroOff;
+        doomSwiper.src = doomOff;
+        minecraftSwiper.src = minecraftOff;
+
+    if (!checkBox.checked) {
+        cyberpunkSwiper.src = cyberpunkOn;
+        metroSwiper.src = metroOn;
+        doomSwiper.src = doomOn;
+        minecraftSwiper.src = minecraftOn;
+    }
+}
+
+//
+//swiper
+const swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    loop: true,
+    modules: [Navigation],
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    }
 });
