@@ -1,8 +1,159 @@
 .video {
-    width: 100%;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    max-width: 1200px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.video__iframe {
+    width: 100%;
+    height: 674px;
+
+    border-radius: 6px;
+}
+
+.video-text__wrapper {
+    margin-bottom: 62px;
+    max-width: 996px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video__title {
+    margin: 0 0 18px;
+
+    text-align: center;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 52px;
+    color: #222222;
+}
+
+.video__title_span {
+    color: #04488f;
+}
+
+.video__subtitle {
+    margin: 0;
+
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #53575A;
+}
+
+@media (max-width: 1300px) {
+    .video {
+        max-width: 960px;
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+
+    .video-text__wrapper {
+        margin-bottom: 37px;
+        max-width: 960px;
+    }
+
+    .video__title {
+        margin-bottom: 24px;
+        font-size: 32px;
+        line-height: 46px;
+    }
+
+    .video__subtitle {
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .video__iframe {
+        height: 540px;
+    }
+}
+
+@media (max-width: 990px) {
+    .video {
+        max-width: 640px;
+    }
+
+    .video-text__wrapper {
+        margin-bottom: 24px;
+        max-width: 640px;
+    }
+
+    .video__title {
+        font-size: 32px;
+        line-height: 46px;
+    }
+
+    .video__subtitle {
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .video__iframe {
+        height: 360px;
+    }
+}
+
+@media (max-width: 739px) {
+    .video {
+        max-width: 440px;
+        margin: 40px auto;
+    }
+
+    .video-text__wrapper {
+        max-width: 440px;
+        margin-bottom: 32px;
+    }
+
+    .video__title {
+        margin-bottom: 14px;
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    .video__subtitle {
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .video__iframe {
+        height: 248px;
+    }
+}
+
+@media (max-width: 469px) {
+    .video {
+        max-width: 300px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .video-text__wrapper {
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .video__title {
+        margin-bottom: 14px;
+
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .video__subtitle {
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .video__iframe {
+        height: 248px;
+    }
 }
