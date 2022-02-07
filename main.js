@@ -2,6 +2,115 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/utils/Image.js":
+/*!****************************!*\
+  !*** ./src/utils/Image.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Image)
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+var Image = /*#__PURE__*/function () {
+  function Image(_ref) {
+    var id = _ref.id,
+        srcOn = _ref.srcOn,
+        srcOff = _ref.srcOff;
+
+    _classCallCheck(this, Image);
+
+    this._id = id;
+    this._srcOn = srcOn;
+    this._srcOff = srcOff;
+  }
+
+  _createClass(Image, [{
+    key: "checkCheckbox",
+    value: function checkCheckbox(checkboxStatus) {
+      if (checkboxStatus) {
+        return this._srcOff;
+      } else {
+        return this._srcOn;
+      }
+    }
+  }, {
+    key: "returnId",
+    value: function returnId() {
+      return this._id;
+    }
+  }]);
+
+  return Image;
+}();
+
+
+
+/***/ }),
+
+/***/ "./src/utils/constants.js":
+/*!********************************!*\
+  !*** ./src/utils/constants.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "cyberpunkSwiper": () => (/* binding */ cyberpunkSwiper),
+/* harmony export */   "metroSwiper": () => (/* binding */ metroSwiper),
+/* harmony export */   "doomSwiper": () => (/* binding */ doomSwiper),
+/* harmony export */   "minecraftSwiper": () => (/* binding */ minecraftSwiper),
+/* harmony export */   "preview": () => (/* binding */ preview),
+/* harmony export */   "images": () => (/* binding */ images),
+/* harmony export */   "popup": () => (/* binding */ popup),
+/* harmony export */   "slides": () => (/* binding */ slides),
+/* harmony export */   "slideElement": () => (/* binding */ slideElement),
+/* harmony export */   "checkBox": () => (/* binding */ checkBox),
+/* harmony export */   "buttonShowAll": () => (/* binding */ buttonShowAll),
+/* harmony export */   "buttonShowAllDrivers": () => (/* binding */ buttonShowAllDrivers),
+/* harmony export */   "driversContainer": () => (/* binding */ driversContainer),
+/* harmony export */   "driversImages": () => (/* binding */ driversImages)
+/* harmony export */ });
+// swiper images' id
+var cyberpunkSwiper = document.querySelector('#cyberpunk-swiper');
+var metroSwiper = document.querySelector('#metro-swiper');
+var doomSwiper = document.querySelector('#doom-swiper');
+var minecraftSwiper = document.querySelector('#minecraft-swiper'); //
+
+var preview = document.querySelector('.rays__image-preview');
+var images = document.querySelectorAll('.rays__image');
+var popup = document.querySelector('.popup'); // export const slides = document.querySelectorAll('.popup-image__image');
+
+var slides = document.querySelectorAll('.swiper-images__slide');
+var slideElement = popup.querySelector('.popup-image__image');
+var checkBox = document.querySelector('input[type="checkbox"]'); //
+
+var buttonShowAll = document.querySelector('.dlss__button-show'); //
+
+var buttonShowAllDrivers = document.querySelector('.drivers__button-show');
+var driversContainer = document.querySelector('.drivers-images__wrapper');
+var driversImages = document.querySelectorAll('.drivers__image'); //
+// export const imagesArray = {
+//     'cyberpunk': {on: cyberpunkOn, off: cyberpunkOff},
+//     'metro': {on: metroOn, off: metroOff},
+//     'doom': {on: doomOn, off: doomOff},
+//     'minecraft': {on: minecraftOn, off: minecraftOff}
+// }
+// export const indexOfImages = {
+//     'metro': 0,
+//     'doom': 1,
+//     'minecraft': 2,
+//     'cyberpunk': 3
+// }
+
+/***/ }),
+
 /***/ "./src/index.css":
 /*!***********************!*\
   !*** ./src/index.css ***!
@@ -12767,14 +12876,16 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ "./src/index.css");
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
-/* harmony import */ var _images_rays_cyberpunk_rtx_on_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./images/rays/cyberpunk-rtx-on.jpg */ "./src/images/rays/cyberpunk-rtx-on.jpg");
-/* harmony import */ var _images_rays_cyberpunk_rtx_off_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./images/rays/cyberpunk-rtx-off.jpg */ "./src/images/rays/cyberpunk-rtx-off.jpg");
-/* harmony import */ var _images_rays_metro_on_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./images/rays/metro-on.jpg */ "./src/images/rays/metro-on.jpg");
-/* harmony import */ var _images_rays_metro_off_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./images/rays/metro-off.jpg */ "./src/images/rays/metro-off.jpg");
-/* harmony import */ var _images_rays_doom_on_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./images/rays/doom-on.jpg */ "./src/images/rays/doom-on.jpg");
-/* harmony import */ var _images_rays_doom_off_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./images/rays/doom-off.jpg */ "./src/images/rays/doom-off.jpg");
-/* harmony import */ var _images_rays_minecraft_rtx_on_2_jpg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./images/rays/minecraft-rtx-on-2.jpg */ "./src/images/rays/minecraft-rtx-on-2.jpg");
-/* harmony import */ var _images_rays_minecraft_rtx_off_2_jpg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./images/rays/minecraft-rtx-off-2.jpg */ "./src/images/rays/minecraft-rtx-off-2.jpg");
+/* harmony import */ var _utils_Image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/Image */ "./src/utils/Image.js");
+/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/constants */ "./src/utils/constants.js");
+/* harmony import */ var _images_rays_cyberpunk_rtx_on_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./images/rays/cyberpunk-rtx-on.jpg */ "./src/images/rays/cyberpunk-rtx-on.jpg");
+/* harmony import */ var _images_rays_cyberpunk_rtx_off_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./images/rays/cyberpunk-rtx-off.jpg */ "./src/images/rays/cyberpunk-rtx-off.jpg");
+/* harmony import */ var _images_rays_metro_on_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./images/rays/metro-on.jpg */ "./src/images/rays/metro-on.jpg");
+/* harmony import */ var _images_rays_metro_off_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./images/rays/metro-off.jpg */ "./src/images/rays/metro-off.jpg");
+/* harmony import */ var _images_rays_doom_on_jpg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./images/rays/doom-on.jpg */ "./src/images/rays/doom-on.jpg");
+/* harmony import */ var _images_rays_doom_off_jpg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./images/rays/doom-off.jpg */ "./src/images/rays/doom-off.jpg");
+/* harmony import */ var _images_rays_minecraft_rtx_on_2_jpg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./images/rays/minecraft-rtx-on-2.jpg */ "./src/images/rays/minecraft-rtx-on-2.jpg");
+/* harmony import */ var _images_rays_minecraft_rtx_off_2_jpg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./images/rays/minecraft-rtx-off-2.jpg */ "./src/images/rays/minecraft-rtx-off-2.jpg");
 
 
 
@@ -12785,132 +12896,54 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var imagesArray = {
-  'cyberpunk': {
-    on: _images_rays_cyberpunk_rtx_on_jpg__WEBPACK_IMPORTED_MODULE_2__,
-    off: _images_rays_cyberpunk_rtx_off_jpg__WEBPACK_IMPORTED_MODULE_3__
-  },
-  'metro': {
-    on: _images_rays_metro_on_jpg__WEBPACK_IMPORTED_MODULE_4__,
-    off: _images_rays_metro_off_jpg__WEBPACK_IMPORTED_MODULE_5__
-  },
-  'doom': {
-    on: _images_rays_doom_on_jpg__WEBPACK_IMPORTED_MODULE_6__,
-    off: _images_rays_doom_off_jpg__WEBPACK_IMPORTED_MODULE_7__
-  },
-  'minecraft': {
-    on: _images_rays_minecraft_rtx_on_2_jpg__WEBPACK_IMPORTED_MODULE_8__,
-    off: _images_rays_minecraft_rtx_off_2_jpg__WEBPACK_IMPORTED_MODULE_9__
-  }
-};
-var indexOfImages = {
-  'metro': 0,
-  'doom': 1,
-  'minecraft': 2,
-  'cyberpunk': 3
-};
-var cyberpunk = document.querySelector('#cyberpunk');
-var metro = document.querySelector('#metro');
-var doom = document.querySelector('#doom');
-var minecraft = document.querySelector('#minecraft');
-var cyberpunkSwiper = document.querySelector('#cyberpunk-swiper');
-var metroSwiper = document.querySelector('#metro-swiper');
-var doomSwiper = document.querySelector('#doom-swiper');
-var minecraftSwiper = document.querySelector('#minecraft-swiper');
-var preview = document.querySelector('.rays__image-preview');
-var popup = document.querySelector('.popup');
-var slide = popup.querySelector('.swiper-slide');
-var checkBox = document.querySelector('input[type="checkbox"]');
-var buttonShowAll = document.querySelector('.dlss__button');
-var chosenMiniImage = cyberpunk.id; //
-// change preview
 
-document.querySelectorAll('.rays__image').forEach(function (item) {
-  item.addEventListener('click', function () {
-    preview.src = item.src;
-    chosenMiniImage = item.id;
-  });
+
+var metroImage = new _utils_Image__WEBPACK_IMPORTED_MODULE_2__["default"]({
+  id: 0,
+  srcOff: _images_rays_metro_off_jpg__WEBPACK_IMPORTED_MODULE_7__,
+  srcOn: _images_rays_metro_on_jpg__WEBPACK_IMPORTED_MODULE_6__
+});
+var doomImage = new _utils_Image__WEBPACK_IMPORTED_MODULE_2__["default"]({
+  id: 1,
+  srcOff: _images_rays_doom_off_jpg__WEBPACK_IMPORTED_MODULE_9__,
+  srcOn: _images_rays_doom_on_jpg__WEBPACK_IMPORTED_MODULE_8__
+});
+var minecraftImage = new _utils_Image__WEBPACK_IMPORTED_MODULE_2__["default"]({
+  id: 2,
+  srcOff: _images_rays_minecraft_rtx_off_2_jpg__WEBPACK_IMPORTED_MODULE_11__,
+  srcOn: _images_rays_minecraft_rtx_on_2_jpg__WEBPACK_IMPORTED_MODULE_10__
+});
+var cyberpunkImage = new _utils_Image__WEBPACK_IMPORTED_MODULE_2__["default"]({
+  id: 3,
+  srcOff: _images_rays_cyberpunk_rtx_off_jpg__WEBPACK_IMPORTED_MODULE_5__,
+  srcOn: _images_rays_cyberpunk_rtx_on_jpg__WEBPACK_IMPORTED_MODULE_4__
 }); //
-//checkbox
 
-checkBox.addEventListener('change', function () {
-  if (checkBox.checked) {
-    preview.src = imagesArray[chosenMiniImage]['off'];
-    cyberpunk.src = _images_rays_cyberpunk_rtx_off_jpg__WEBPACK_IMPORTED_MODULE_3__;
-    metro.src = _images_rays_metro_off_jpg__WEBPACK_IMPORTED_MODULE_5__;
-    doom.src = _images_rays_doom_off_jpg__WEBPACK_IMPORTED_MODULE_7__;
-    minecraft.src = _images_rays_minecraft_rtx_off_2_jpg__WEBPACK_IMPORTED_MODULE_9__;
+var chosenImage = 3;
+var step = 3;
+var offset = 0; // let slides2;
+
+var imagesArray = [metroImage, doomImage, minecraftImage, cyberpunkImage]; // SWIPERS
+
+function renderSwiper() {
+  var img = document.createElement('img');
+  img.src = imagesArray[step].checkCheckbox(_utils_constants__WEBPACK_IMPORTED_MODULE_3__.checkBox.checked);
+  img.classList.add('swiper-images__slide');
+  img.style.left = offset * 960 + 'px';
+  document.querySelector('.swiper-images');
+
+  if (step + 1 === imagesArray.length) {
+    step = 0;
+  } else {
+    step++;
   }
 
-  if (!checkBox.checked) {
-    preview.src = imagesArray[chosenMiniImage]['on'];
-    cyberpunk.src = _images_rays_cyberpunk_rtx_on_jpg__WEBPACK_IMPORTED_MODULE_2__;
-    metro.src = _images_rays_metro_on_jpg__WEBPACK_IMPORTED_MODULE_4__;
-    doom.src = _images_rays_doom_on_jpg__WEBPACK_IMPORTED_MODULE_6__;
-    minecraft.src = _images_rays_minecraft_rtx_on_2_jpg__WEBPACK_IMPORTED_MODULE_8__;
-  }
-}); //
-// popup
-
-preview.addEventListener('click', function () {
-  popup.classList.add('popup_opened');
-  changeSwiperImages();
-  swiper.activeIndex = indexOfImages[chosenMiniImage];
-  console.log(swiper.activeIndex);
-});
-popup.addEventListener('click', function (e) {
-  document.addEventListener('click', function (e) {
-    if (e.target === popup || e.target === slide) {
-      popup.classList.remove('popup_opened');
-    }
-  });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === "Escape") {
-      popup.classList.remove('popup_opened');
-    }
-  });
-});
-
-function changeSwiperImages() {
-  // swiper.activeIndex = chosenPreviewImage;
-  cyberpunkSwiper.src = _images_rays_cyberpunk_rtx_off_jpg__WEBPACK_IMPORTED_MODULE_3__;
-  metroSwiper.src = _images_rays_metro_off_jpg__WEBPACK_IMPORTED_MODULE_5__;
-  doomSwiper.src = _images_rays_doom_off_jpg__WEBPACK_IMPORTED_MODULE_7__;
-  minecraftSwiper.src = _images_rays_minecraft_rtx_off_2_jpg__WEBPACK_IMPORTED_MODULE_9__;
-
-  if (!checkBox.checked) {
-    cyberpunkSwiper.src = _images_rays_cyberpunk_rtx_on_jpg__WEBPACK_IMPORTED_MODULE_2__;
-    metroSwiper.src = _images_rays_metro_on_jpg__WEBPACK_IMPORTED_MODULE_4__;
-    doomSwiper.src = _images_rays_doom_on_jpg__WEBPACK_IMPORTED_MODULE_6__;
-    minecraftSwiper.src = _images_rays_minecraft_rtx_on_2_jpg__WEBPACK_IMPORTED_MODULE_8__;
-  }
-} //
-// button
-
-
-var buttonToOpen = false;
-buttonShowAll.addEventListener('click', function () {
-  toggleShowGames();
-});
-
-function toggleShowGames() {
-  if (!buttonToOpen) {
-    document.querySelector('.dlss__games-preview_hidden').style.display = 'flex';
-    buttonShowAll.innerHTML = 'Скрыть';
-    return buttonToOpen = true;
-  }
-
-  if (buttonToOpen) {
-    document.querySelector('.dlss__games-preview_hidden').style.display = 'none';
-    buttonShowAll.innerHTML = 'Показать полностью';
-    return buttonToOpen = false;
-  }
-} //
-//swiper
-
+  offset = 1;
+}
 
 var swiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper', {
   slidesPerView: 1,
+  loopedSlides: 1,
   loop: true,
   modules: [swiper__WEBPACK_IMPORTED_MODULE_1__.Navigation],
   grabCursor: true,
@@ -12928,7 +12961,69 @@ var gamesSwiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper-dl
     el: ".swiper-pagination",
     clickable: true
   }
+}); //
+
+function renderImages() {
+  var counter = 0;
+  _utils_constants__WEBPACK_IMPORTED_MODULE_3__.images.forEach(function (image) {
+    image.src = imagesArray[counter].checkCheckbox(_utils_constants__WEBPACK_IMPORTED_MODULE_3__.checkBox.checked);
+    var imageId = imagesArray[counter].returnId();
+    image.addEventListener('click', function () {
+      _utils_constants__WEBPACK_IMPORTED_MODULE_3__.preview.src = image.src;
+      chosenImage = imageId;
+    });
+    counter++;
+  });
+}
+
+function renderPreview() {
+  _utils_constants__WEBPACK_IMPORTED_MODULE_3__.preview.src = cyberpunkImage.checkCheckbox(_utils_constants__WEBPACK_IMPORTED_MODULE_3__.checkBox.checked);
+}
+
+_utils_constants__WEBPACK_IMPORTED_MODULE_3__.checkBox.addEventListener('change', function () {
+  renderPreview();
+  renderImages();
+}); //
+// popup
+
+_utils_constants__WEBPACK_IMPORTED_MODULE_3__.preview.addEventListener('click', function () {
+  _utils_constants__WEBPACK_IMPORTED_MODULE_3__.popup.classList.add('popup_opened');
+  renderSwiper();
 });
+_utils_constants__WEBPACK_IMPORTED_MODULE_3__.popup.addEventListener('click', function (e) {
+  document.addEventListener('click', function (e) {
+    if (e.target === _utils_constants__WEBPACK_IMPORTED_MODULE_3__.popup || e.target === _utils_constants__WEBPACK_IMPORTED_MODULE_3__.slideElement) {
+      _utils_constants__WEBPACK_IMPORTED_MODULE_3__.popup.classList.remove('popup_opened');
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === "Escape") {
+      _utils_constants__WEBPACK_IMPORTED_MODULE_3__.popup.classList.remove('popup_opened');
+    }
+  });
+}); // button
+
+var buttonToOpen = false;
+_utils_constants__WEBPACK_IMPORTED_MODULE_3__.buttonShowAll.addEventListener('click', function () {
+  toggleShowGames();
+});
+
+function toggleShowGames() {
+  if (!buttonToOpen) {
+    document.querySelector('.dlss__games-preview_hidden').style.display = 'flex';
+    _utils_constants__WEBPACK_IMPORTED_MODULE_3__.buttonShowAll.innerHTML = 'Скрыть';
+    return buttonToOpen = true;
+  }
+
+  if (buttonToOpen) {
+    document.querySelector('.dlss__games-preview_hidden').style.display = 'none';
+    _utils_constants__WEBPACK_IMPORTED_MODULE_3__.buttonShowAll.innerHTML = 'Показать полностью';
+    return buttonToOpen = false;
+  }
+}
+
+renderImages();
+renderPreview();
 })();
 
 /******/ })()
