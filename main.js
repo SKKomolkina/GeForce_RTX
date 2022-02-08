@@ -72,7 +72,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "slides": () => (/* binding */ slides),
 /* harmony export */   "slideElement": () => (/* binding */ slideElement),
 /* harmony export */   "checkBox": () => (/* binding */ checkBox),
-/* harmony export */   "buttonShowAll": () => (/* binding */ buttonShowAll),
+/* harmony export */   "buttonShowAllGames": () => (/* binding */ buttonShowAllGames),
 /* harmony export */   "buttonShowAllDrivers": () => (/* binding */ buttonShowAllDrivers),
 /* harmony export */   "driversContainer": () => (/* binding */ driversContainer),
 /* harmony export */   "driversImages": () => (/* binding */ driversImages)
@@ -91,10 +91,10 @@ var slides = document.querySelectorAll('.swiper-images__slide');
 var slideElement = popup.querySelector('.popup-image__image');
 var checkBox = document.querySelector('input[type="checkbox"]'); //
 
-var buttonShowAll = document.querySelector('.dlss__button-show'); //
+var buttonShowAllGames = document.querySelector('.dlss__button'); //
 
 var buttonShowAllDrivers = document.querySelector('.drivers__button-show');
-var driversContainer = document.querySelector('.drivers-images__wrapper');
+var driversContainer = document.querySelector('.drivers');
 var driversImages = document.querySelectorAll('.drivers__image'); //
 // export const imagesArray = {
 //     'cyberpunk': {on: cyberpunkOn, off: cyberpunkOff},
@@ -13003,27 +13003,103 @@ _utils_constants__WEBPACK_IMPORTED_MODULE_3__.popup.addEventListener('click', fu
   });
 }); // button
 
-var buttonToOpen = false;
-_utils_constants__WEBPACK_IMPORTED_MODULE_3__.buttonShowAll.addEventListener('click', function () {
+var buttonToOpenGames = false;
+_utils_constants__WEBPACK_IMPORTED_MODULE_3__.buttonShowAllGames.addEventListener('click', function () {
   toggleShowGames();
 });
 
 function toggleShowGames() {
-  if (!buttonToOpen) {
+  if (!buttonToOpenGames) {
     document.querySelector('.dlss__games-preview_hidden').style.display = 'flex';
-    _utils_constants__WEBPACK_IMPORTED_MODULE_3__.buttonShowAll.innerHTML = 'Скрыть';
-    return buttonToOpen = true;
+    _utils_constants__WEBPACK_IMPORTED_MODULE_3__.buttonShowAllGames.innerHTML = 'Скрыть';
+    return buttonToOpenGames = true;
   }
 
-  if (buttonToOpen) {
+  if (buttonToOpenGames) {
     document.querySelector('.dlss__games-preview_hidden').style.display = 'none';
-    _utils_constants__WEBPACK_IMPORTED_MODULE_3__.buttonShowAll.innerHTML = 'Показать полностью';
-    return buttonToOpen = false;
+    _utils_constants__WEBPACK_IMPORTED_MODULE_3__.buttonShowAllGames.innerHTML = 'Показать полностью';
+    return buttonToOpenGames = false;
+  }
+}
+
+var buttonToOpenDrivers = false;
+var windowSmall = false;
+_utils_constants__WEBPACK_IMPORTED_MODULE_3__.buttonShowAllDrivers.addEventListener('click', function () {
+  toggleShowDrivers();
+});
+
+function toggleShowDrivers() {
+  if (!buttonToOpenDrivers) {
+    _utils_constants__WEBPACK_IMPORTED_MODULE_3__.driversImages.forEach(function (item) {
+      item.classList.remove('drivers__image_hidden'); // handleChangeWindowSize();
+    });
+    _utils_constants__WEBPACK_IMPORTED_MODULE_3__.buttonShowAllDrivers.innerHTML = 'Скрыть';
+    return buttonToOpenDrivers = true;
+  }
+
+  if (buttonToOpenDrivers) {
+    handleChangeWindowSize();
+    _utils_constants__WEBPACK_IMPORTED_MODULE_3__.buttonShowAllDrivers.innerHTML = 'Показать полностью';
+    return buttonToOpenDrivers = false;
+  }
+} //
+
+
+window.addEventListener('resize', function () {
+  selectWindowSize();
+  handleChangeWindowSize();
+});
+
+function handleChangeWindowSize() {
+  console.log(windowSmall);
+
+  if (!windowSmall) {
+    removeAllHiddenLayers();
+    showSixIcons();
+  }
+
+  if (windowSmall) {
+    removeAllHiddenLayers();
+    showFourIcons();
+  }
+}
+
+function selectWindowSize() {
+  if (_utils_constants__WEBPACK_IMPORTED_MODULE_3__.driversContainer.clientWidth === 1199) {
+    windowSmall = false;
+  } else {
+    windowSmall = true;
+  }
+
+  handleChangeWindowSize();
+}
+
+function removeAllHiddenLayers() {
+  _utils_constants__WEBPACK_IMPORTED_MODULE_3__.driversImages.forEach(function (item) {
+    item.classList.remove('drivers__image_hidden');
+  });
+}
+
+function showSixIcons() {
+  for (var i = 0; i < _utils_constants__WEBPACK_IMPORTED_MODULE_3__.driversImages.length; i++) {
+    if (i > 5) {
+      _utils_constants__WEBPACK_IMPORTED_MODULE_3__.driversImages[i].classList.add('drivers__image_hidden');
+    }
+  }
+}
+
+function showFourIcons() {
+  for (var i = 0; i < _utils_constants__WEBPACK_IMPORTED_MODULE_3__.driversImages.length; i++) {
+    if (i > 3) {
+      _utils_constants__WEBPACK_IMPORTED_MODULE_3__.driversImages[i].classList.add('drivers__image_hidden');
+    }
   }
 }
 
 renderImages();
 renderPreview();
+selectWindowSize();
+handleChangeWindowSize();
 })();
 
 /******/ })()
