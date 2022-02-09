@@ -75,7 +75,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "buttonShowAllGames": () => (/* binding */ buttonShowAllGames),
 /* harmony export */   "buttonShowAllDrivers": () => (/* binding */ buttonShowAllDrivers),
 /* harmony export */   "driversContainer": () => (/* binding */ driversContainer),
-/* harmony export */   "driversImages": () => (/* binding */ driversImages)
+/* harmony export */   "driversImages": () => (/* binding */ driversImages),
+/* harmony export */   "geforceSectionContainer": () => (/* binding */ geforceSectionContainer),
+/* harmony export */   "geforceSectionImage": () => (/* binding */ geforceSectionImage)
 /* harmony export */ });
 // swiper images' id
 var cyberpunkSwiper = document.querySelector('#cyberpunk-swiper');
@@ -96,6 +98,9 @@ var buttonShowAllGames = document.querySelector('.dlss__button'); //
 var buttonShowAllDrivers = document.querySelector('.drivers__button-show');
 var driversContainer = document.querySelector('.drivers');
 var driversImages = document.querySelectorAll('.drivers__image'); //
+
+var geforceSectionContainer = document.querySelector('.geforce-blue__wrapper');
+var geforceSectionImage = geforceSectionContainer.querySelector('.geforce-blue__image'); //
 // export const imagesArray = {
 //     'cyberpunk': {on: cyberpunkOn, off: cyberpunkOff},
 //     'metro': {on: metroOn, off: metroOff},
@@ -120,6 +125,16 @@ var driversImages = document.querySelectorAll('.drivers__image'); //
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
+
+/***/ }),
+
+/***/ "./src/images/geforce/image-739.png":
+/*!******************************************!*\
+  !*** ./src/images/geforce/image-739.png ***!
+  \******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "a324c7bfb9ec8bd500b4.png";
 
 /***/ }),
 
@@ -12886,6 +12901,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_rays_doom_off_jpg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./images/rays/doom-off.jpg */ "./src/images/rays/doom-off.jpg");
 /* harmony import */ var _images_rays_minecraft_rtx_on_2_jpg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./images/rays/minecraft-rtx-on-2.jpg */ "./src/images/rays/minecraft-rtx-on-2.jpg");
 /* harmony import */ var _images_rays_minecraft_rtx_off_2_jpg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./images/rays/minecraft-rtx-off-2.jpg */ "./src/images/rays/minecraft-rtx-off-2.jpg");
+/* harmony import */ var _images_geforce_image_739_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./images/geforce/image-739.png */ "./src/images/geforce/image-739.png");
+
 
 
 
@@ -13099,7 +13116,6 @@ function showFourIcons() {
 renderImages();
 renderPreview();
 selectWindowSize();
-handleChangeWindowSize();
 })();
 
 /******/ })()
