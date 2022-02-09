@@ -82,6 +82,9 @@
 .dlss__games-image {
     max-width: 210px;
     max-height: 140px;
+
+    opacity: 1;
+    transition: opacity .3s ease-in;
 }
 
 .dlss__button {
@@ -152,6 +155,15 @@
     .dlss__swiper {
         max-width: 640px;
     }
+
+    .dlss__list-item {
+        justify-content: center;
+    }
+
+    .dlss__image {
+        max-width: 144px;
+        max-height: 118px;
+    }
 }
 
 @media (max-width: 739px) {
@@ -199,20 +211,7 @@
     }
 
     .dlss__button {
-        padding: 26px 54px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        background-color: #04488f;
-        color: #fff;
-        border: none;
-        border-radius: 6px;
-
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
+        display: block;
     }
 }
 

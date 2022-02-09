@@ -232,7 +232,6 @@
 
                         <label class="checkbox">
                             <input class="checkbox-input checkbox-invisible" type="checkbox">
-                            <!--                        <span class="checkbox-visible__text">on</span>-->
                             <span class="checkbox-visible">
                             <span class="checkbox-visible__text checkbox-visible__text_off">off</span>
                             <span class="checkbox-visible__text checkbox-visible__text_on">on</span>
@@ -244,7 +243,7 @@
 
                 <img id="preview"
                      class="rays__image-preview"
-                     src="<%=require('./images/rays/cyberpunk-rtx-off.jpg')%>"
+                     src="#"
                      alt="preview"
                 >
             </div>
@@ -252,22 +251,22 @@
             <div class="rays__images-wrapper">
                 <img id="metro"
                      class="rays__image"
-                     src="<%=require('./images/rays/metro-off.jpg')%>"
+                     src="#"
                      alt="metro"
                 >
                 <img id="doom"
                      class="rays__image"
-                     src="<%=require('./images/rays/doom-off.jpg')%>"
+                     src="#"
                      alt="doom"
                 >
                 <img id="minecraft"
                      class="rays__image"
-                     src="<%=require('./images/rays/minecraft-rtx-off-2.jpg')%>"
+                     src="#"
                      alt="minecraft"
                 >
                 <img id="cyberpunk"
                      class="rays__image"
-                     src="<%=require('./images/rays/cyberpunk-rtx-off.jpg')%>"
+                     src="#"
                      alt="cyberpunk"
                 >
             </div>
@@ -355,7 +354,7 @@
                 <img class="dlss__games-image" src="<%=require('./images/dlss/logo 24.png')%>">
             </div>
 
-            <button class="dlss__button" type="button">Показать полностью</button>
+            <button class="button-blue dlss__button" type="button">Показать полностью</button>
         </section>
 
         <section class="video">
@@ -371,11 +370,7 @@
                 </p>
             </div>
 
-            <iframe class="video__iframe" src="https://www.youtube.com/embed/K8DddlREHEE"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-            </iframe>
+            <iframe class="video__iframe" src="https://www.youtube.com/embed/K8DddlREHEE" allowfullscreen></iframe>
         </section>
 
         <section class="fast-and-easy">
@@ -423,29 +418,95 @@
                 <img class="streaming__image" src="<%=require('./images/streaming/streaming-3.png')%>">
             </div>
         </section>
+
+        <section class="drivers">
+            <div class="drivers-text__wrapper">
+                <h2 class="streaming__title">Ускорение работы с графикой</h2>
+                <p class="drivers__text">
+                    Переключайтесь между игровыми и Studio драйверами в утилите GeForce Experience.
+                    Драйвера Studio обеспечивают высокий уровень производительности и возможностей для самых
+                    требовательных графических приложений. Ускорьте рендеринг и работу со сложными эффектами
+                    и реализуйте свои самые амбициозные проекты.
+                </p>
+                <a class="streaming__link" target="_blank" href="https://www.nvidia.com/ru-ru/studio/">
+                    <img class="streaming__link-icon" src="<%=require('./images/streaming/Polygon2.svg')%>">
+                    Подробнее...
+                </a>
+            </div>
+
+            <div class="drivers-images__wrapper">
+                <img class="drivers__image" src="<%=require('./images/drivers/logo 1.png')%>">
+                <img class="drivers__image" src="<%=require('./images/drivers/logo 2.png')%>">
+                <img class="drivers__image" src="<%=require('./images/drivers/logo 3.png')%>">
+                <img class="drivers__image" src="<%=require('./images/drivers/logo 4.png')%>">
+                <img class="drivers__image" src="<%=require('./images/drivers/logo 5.png')%>">
+                <img class="drivers__image" src="<%=require('./images/drivers/logo 6.png')%>">
+                <img class="drivers__image" src="<%=require('./images/drivers/logo 7.png')%>">
+                <img class="drivers__image" src="<%=require('./images/drivers/logo 8.png')%>">
+                <img class="drivers__image" src="<%=require('./images/drivers/logo 9.png')%>">
+                <img class="drivers__image" src="<%=require('./images/drivers/logo 10.png')%>">
+                <img class="drivers__image" src="<%=require('./images/drivers/logo 11.png')%>">
+                <img class="drivers__image" src="<%=require('./images/drivers/logo 12.png')%>">
+                <img class="drivers__image" src="<%=require('./images/drivers/logo 13.png')%>">
+                <img class="drivers__image" src="<%=require('./images/drivers/logo 14.png')%>">
+                <img class="drivers__image" src="<%=require('./images/drivers/logo 15.png')%>">
+                <img class="drivers__image" src="<%=require('./images/drivers/logo 16.png')%>">
+                <img class="drivers__image" src="<%=require('./images/drivers/logo 17.png')%>">
+                <img class="drivers__image" src="<%=require('./images/drivers/logo 18.png')%>">
+            </div>
+            <button class="button-blue drivers__button-show" type="button">Показать полностью</button>
+        </section>
+
+        <section class="geforce">
+            <div class="geforce-blue__wrapper">
+                <div class="geforce-blue__text-wrapper">
+                    <h1 class="geforce-blue__title">GeForce</h1>
+                    <h2 class="geforce-blue__subtitle">RTX 3060Ti X</h2>
+                </div>
+                <img class="geforce-blue__image" src="<%=require('./images/geforce/image.png')%>" alt="GEFORCE">
+            </div>
+            <div class="geforce-blue__background"></div>
+
+            <div class="geforce-white__wrapper">
+                <h2 class="geforce-white__title">Выбери свою GeForce RTX 3060Ti X</h2>
+                <p class="geforce-white__text">
+                    Стильный дизайн в чёрных тонах с металлическими вставками на кожухе и металлическим бэкплейтом
+                    прекрасно дополнит образ любой игровой сборки.
+                </p>
+                <p class="geforce-white__text-border">
+                    2 больших 102 мм вентилятора с настраиваемой RGB подсветкой и возможностью
+                    синхронизации с остальными элементами системы.
+                </p>
+                <p class="geforce-white__text">
+                    Отличное охлаждение - высокий набранный радиатор пронизан длинными тепловыми трубками.
+                    Единый теплосъёмник эффективно отводит тепло от всех ключевых зон нагрева. Вентиляторы
+                    поддерживают логику работы Fan-Stop с разнесёнными точками старта и остановки - наслаждайтесь
+                    тишиной при просмотре видео и сёрфинге.
+                </p>
+                <a class="streaming__link" target="_blank" href="https://www.nvidia.com/ru-ru/studio/">
+                    <img class="streaming__link-icon" src="<%=require('./images/streaming/Polygon2.svg')%>">
+                    Подробнее...
+                </a>
+
+                <div class="geforce-white__buttons-wrapper">
+                    <button class="geforce__button button-gray">102 мм</button>
+                    <button class="geforce__button button-gray">RGB</button>
+                    <button class="geforce__button button-gray">Fan-Stop</button>
+                </div>
+            </div>
+        </section>
     </main>
 </div>
 
 <div class="popup">
-    <div class="popup-image swiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img id="metro-swiper" class="popup-image__image" src="#"
-                     alt="metro">
-            </div>
-            <div class="swiper-slide">
-                <img id="doom-swiper" class="popup-image__image" src="#"
-                     alt="doom">
-            </div>
-            <div class="swiper-slide">
-                <img id="minecraft-swiper" class="popup-image__image" src="#"
-                     alt="minecraft">
-            </div>
-            <div class="swiper-slide">
-                <img id="cyberpunk-swiper" class="popup-image__image" src="#"
-                     alt="cyberpunk">
-            </div>
-        </div>
+    <div class="popup-image swiper-images">
+        <img class="popup-image__image swiper-images__slide" src="#">
+
+        <img class="popup-image__image swiper-images__slide" src="#">
+
+        <img class="popup-image__image swiper-images__slide" src="#">
+
+        <img class="popup-image__image swiper-images__slide" src="#">
 
         <div class="swiper-button-next">
         </div>
@@ -454,6 +515,38 @@
     </div>
 </div>
 
+<footer class="footer">
+    <div class="footer-grid">
+        <a class="footer__logo-link" href="https://www.kfa2.com/kfa2_ru/" target="_blank">
+            <img src="<%=require('./images/footer/logo.svg')%>" alt="KFA2" class="footer__logo">
+        </a>
+
+        <ul class="footer__icons">
+            <li class="footer__icons-item">
+                <a href="https://vk.com/kfa2ru" target="_blank" class="footer-icon__link">
+                    <img class="footer-icon__image" src="<%=require('./images/footer/Vk logo.svg')%>">
+                </a>
+            </li>
+            <li class="footer__icons-item">
+                <a href="https://www.instagram.com/kfa2ru/" target="_blank" class="footer-icon__link">
+                    <img class="footer-icon__image" src="<%=require('./images/footer/inst.svg')%>">
+                </a>
+            </li>
+            <li class="footer__icons-item">
+                <a href="https://www.tiktok.com/@kfa2ru?lang=ru-RU" target="_blank" class="footer-icon__link">
+                    <img class="footer-icon__image" src="<%=require('./images/footer/tiktok.svg')%>">
+                </a>
+            </li>
+        </ul>
+
+        <p class="footer__copyright">© 2022 KFA2 Россия. Все права защищены.</p>
+
+        <div class="footer__terms">
+            <a href="https://vk.com/kfa2ru" class="footer__term">Условия использования</a>
+            <a href="https://vk.com/kfa2ru" class="footer__term">Политика конфиденциальности</a>
+        </div>
+    </div>
+</footer>
 </body>
 
 </html>

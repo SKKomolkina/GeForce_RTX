@@ -1,0 +1,436 @@
+.geforce {
+    /*padding-left: 360px;*/
+    margin-top: 75px;
+    margin-left: -31%;
+
+    width: 1920px;
+    height: 884px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("../../images/geforce/1920-back.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.geforce-blue__background {
+    display: none;
+
+    background-image: url("../../images/geforce/739-back-blue.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    width: 100%;
+    min-height: 516px;
+    max-height: 615px;
+    position: absolute;
+}
+
+.geforce-blue__wrapper {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.geforce-white__wrapper {
+    max-width: 590px;
+    padding-left: 105px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.geforce-white__buttons-wrapper {
+    margin-top: 37px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.geforce-blue__text-wrapper {
+    z-index: 10;
+    padding-top: 150px;
+
+}
+
+.geforce-blue__title {
+    margin: 0;
+    padding: 0;
+
+    font-weight: 800;
+    font-size: 97px;
+    line-height: 118px;
+    color: #ffffff;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.geforce-blue__subtitle {
+    margin: 0;
+    padding: 0;
+
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 52px;
+    color: #ffffff;
+}
+
+.geforce-blue__image {
+    max-width: 590px;
+
+    position: absolute;
+    left: 0;
+    top: -229px;
+    z-index: 5;
+}
+
+.geforce-white__title {
+    margin: 0 0 24px;
+    padding: 0;
+
+    text-align: left;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 52px;
+    color: #04488f;
+}
+
+.geforce-white__text {
+    margin: 0;
+    padding-left: 0;
+
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #53575A;
+}
+
+.geforce-white__text-border {
+    margin: 32px 0;
+    padding-left: 20px;
+
+    text-align: left;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: #04488f;
+
+    border-left: 1px solid #04488f;
+}
+
+@media (max-width: 1300px) {
+    .geforce {
+        margin-top: 50px;
+        margin-left: -18%;
+
+        padding-top: 40px;
+
+        width: 1300px;
+        height: 749px;
+        background-image: url("../../images/geforce/1300-back.svg");
+
+        align-items: flex-start;
+    }
+
+    .geforce-blue__image {
+        max-width: 468px;
+        left: -25px;
+        top: 30px;
+    }
+
+    .geforce-blue__wrapper {
+        max-width: 394px;
+    }
+
+    .geforce-blue__text-wrapper {
+        padding-top: 430px;
+    }
+
+    .geforce-white__wrapper {
+        max-width: 468px;
+
+        z-index: 10;
+    }
+
+    .geforce-blue__title {
+        font-size: 76px;
+        line-height: 92px;
+    }
+
+    .geforce-blue__subtitle {
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    .geforce-white__title {
+        margin-bottom: 17px;
+        max-width: 383px;
+
+        font-size: 32px;
+        line-height: 46px;
+    }
+
+    .geforce-white__text {
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .geforce-white__text-border {
+        margin-bottom: 25px;
+        margin-top: 25px;
+
+        font-size: 16px;
+        line-height: 23px;
+    }
+}
+
+@media (max-width: 990px) {
+    .geforce {
+        margin-left: -28%;
+        margin-top: 70px;
+        padding: 0;
+
+        background-image: url("../../images/geforce/990-back.svg");
+
+        width: 990px;
+        height: 788px;
+    }
+
+    .geforce-blue__wrapper {
+        max-width: 309px;
+        padding-right: 0;
+    }
+
+    .geforce-white__wrapper {
+        margin-top: 42px;
+        padding-left: 22px;
+        max-width: 309px;
+    }
+
+    .geforce-blue__text-wrapper {
+        padding-top: 478px;
+        padding-right: 0;
+    }
+
+    .geforce-blue__image {
+        max-width: 308px;
+        left: 0;
+        top: 88px;
+    }
+
+    .geforce-blue__title {
+        font-size: 60px;
+        line-height: 73px;
+    }
+
+    .geforce-blue__subtitle {
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    .geforce-white__title {
+        margin-bottom: 16px;
+
+        font-size: 32px;
+        line-height: 46px;
+    }
+
+    .geforce-white__text {
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .geforce-white__text-border {
+        margin-top: 25px;
+        margin-bottom: 25px;
+
+        font-size: 16px;
+        line-height: 23px;
+    }
+
+    .geforce-white__buttons-wrapper {
+        margin-top: 44px;
+    }
+}
+
+@media (max-width: 739px) {
+    .geforce {
+        margin-left: 0;
+        margin-top: 50px;
+        width: 100%;
+        height: 100%;
+        min-height: min-content;
+
+        background: none;
+        position: relative;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        overflow: hidden;
+    }
+
+    .geforce-white__wrapper {
+        order: 0;
+        max-width: 440px;
+        margin-top: 0;
+        padding: 0;
+
+        position: relative;
+
+        align-items: center;
+    }
+
+    .geforce-blue__wrapper {
+        margin-top: 30px;
+        /*width: 100%;*/
+        width: 440px;
+        max-width: 440px;
+        height: 516px;
+
+        position: relative;
+        align-items: center;
+        order: 1;
+    }
+
+    .geforce-white__title {
+        margin-bottom: 14px;
+
+        text-align: center;
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    .geforce-white__text {
+        text-align: center;
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .geforce-white__text-border {
+        margin-top: 14px;
+        margin-bottom: 14px;
+
+        text-align: center;
+        font-size: 16px;
+        line-height: 23px;
+
+        border: none;
+    }
+
+    .geforce-blue__image {
+        margin-right: 15px;
+        max-width: 370px;
+        max-height: 502px;
+        top: 0;
+
+        position: relative;
+
+        order: 0;
+    }
+
+    .geforce-white__buttons-wrapper {
+        margin: 0;
+        position: absolute;
+        top: 380px;
+        right: 0;
+
+        flex-direction: column;
+
+        z-index: 10;
+    }
+
+    .geforce__button {
+        margin-top: 13px;
+        margin-right: 0;
+    }
+
+    .geforce__button:first-child {
+        margin-top: 0;
+    }
+
+    .geforce-blue__text-wrapper {
+        padding: 0;
+        margin-top: -158px;
+        align-self: flex-start;
+
+        order: 1;
+    }
+
+    .geforce-blue__background {
+        display: block;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+@media (max-width: 469px) {
+    .geforce-white__wrapper {
+        max-width: 300px;
+    }
+
+    .geforce-blue__wrapper {
+        max-width: 300px;
+        height: 378px;
+
+        justify-content: flex-start;
+    }
+
+    .geforce-blue__image {
+        max-width: 295px;
+        margin-right: 50px;
+    }
+
+    .geforce-blue__text-wrapper {
+        margin-top: -164px;
+    }
+
+    .geforce-blue__title {
+        font-size: 48px;
+        line-height: 58px;
+    }
+
+    .geforce-blue__subtitle {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .geforce-blue__background {
+        /*bottom: -125px;*/
+        height: 378px;
+        min-height: 378px;
+        max-height: 378px;
+    }
+
+    .geforce-white__buttons-wrapper {
+        top: 470px;
+    }
+
+    .geforce-white__title {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .geforce-white__text {
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .geforce-white__text-border {
+        font-size: 12px;
+        line-height: 17px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
