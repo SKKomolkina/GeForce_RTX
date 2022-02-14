@@ -265,11 +265,16 @@
     .rays__image-preview {
         width: 300px;
         height: 294px;
+
+
+        transition: all linear .4ms;
     }
 
     .rays__image {
         width: 145px;
         height: 145px;
+
+        transition: all linear .4ms;
     }
 
     .rays__image:nth-child(-n + 2) {

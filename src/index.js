@@ -1,6 +1,6 @@
 import './index.css';
 
-import Swiper, {Navigation, Pagination} from "swiper";
+import Swiper, {Pagination} from "swiper";
 
 import Image from "./utils/Image";
 
@@ -10,9 +10,13 @@ import {
     checkBox,
     images,
     slideElement,
-    slides,
     buttonShowAllDrivers,
-    driversContainer, driversImages, buttonShowAllGames
+    driversContainer,
+    driversImages,
+    buttonShowAllGames,
+    rightButton,
+    leftButton,
+    page
 } from './utils/constants';
 
 import cyberpunkOn from './images/rays/cyberpunk-rtx-on.jpg';
@@ -27,8 +31,6 @@ import doomOff from './images/rays/doom-off.jpg';
 import minecraftOn from './images/rays/minecraft-rtx-on-2.jpg';
 import minecraftOff from './images/rays/minecraft-rtx-off-2.jpg';
 
-import geforceImage from './images/geforce/image-739.png';
-
 const metroImage = new Image({id: 0, srcOff: metroOff, srcOn: metroOn});
 const doomImage = new Image({id: 1, srcOff: doomOff, srcOn: doomOn});
 const minecraftImage = new Image({id: 2, srcOff: minecraftOff, srcOn: minecraftOn});
@@ -36,40 +38,53 @@ const cyberpunkImage = new Image({id: 3, srcOff: cyberpunkOff, srcOn: cyberpunkO
 
 //
 let chosenImage = 3;
-let step = 3;
-let offset = 0;
-// let slides2;
-
 const imagesArray = [metroImage, doomImage, minecraftImage, cyberpunkImage];
 
-// SWIPERS
-function renderSwiper() {
-    let img = document.createElement('img');
-    img.src = imagesArray[step].checkCheckbox(checkBox.checked);
-    img.classList.add('swiper-images__slide');
-    img.style.left = offset * 960 + 'px';
+//
+let buttonToOpenDrivers = false;
+let buttonToOpenGames = false;
+let windowSmall = false;
 
-    document.querySelector('.swiper-images');
+//
+// SWIPER
+function initialSwiper() {
+    let counter = 0;
 
-    if (step + 1 === imagesArray.length) {
-        step = 0;
-    } else {
-        step++
-    }
-    offset = 1;
+    slideElement.forEach((item) => {
+        item.src = imagesArray[counter].checkCheckbox(checkBox.checked);
+
+        if (counter <= imagesArray.length) {
+            counter++;
+        } else {
+            counter = 0;
+        }
+    });
 }
 
-const swiper = new Swiper('.swiper', {
-    slidesPerView: 1,
-    loopedSlides: 1,
-    loop: true,
-    modules: [Navigation],
-    grabCursor: true,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+function renderSwiper() {
+    for (let i = 0; i < imagesArray.length; i++) {
+        slideElement[i].classList.add('popup-image__image_opacity');
     }
-});
+    slideElement[chosenImage].classList.remove('popup-image__image_opacity');
+}
+
+function left() {
+    if (chosenImage + 1 === imagesArray.length) {
+        chosenImage = 0;
+    } else {
+        chosenImage++;
+    }
+    renderSwiper();
+}
+
+function right() {
+    if (chosenImage - 1 === -1) {
+        chosenImage = slideElement.length - 1;
+    } else {
+        chosenImage--;
+    }
+    renderSwiper();
+}
 
 const gamesSwiper = new Swiper('.swiper-dlss', {
     slidesPerView: 1,
@@ -83,6 +98,7 @@ const gamesSwiper = new Swiper('.swiper-dlss', {
 });
 
 //
+// Rays Images render
 function renderImages() {
     let counter = 0;
 
@@ -93,49 +109,21 @@ function renderImages() {
         image.addEventListener('click', () => {
             preview.src = image.src;
             chosenImage = imageId;
+
+            renderSwiper();
         });
 
         counter++;
     });
+
+    initialSwiper();
 }
 
 function renderPreview() {
     preview.src = cyberpunkImage.checkCheckbox(checkBox.checked);
 }
 
-checkBox.addEventListener('change', () => {
-    renderPreview();
-    renderImages();
-});
-
 //
-// popup
-preview.addEventListener('click', () => {
-    popup.classList.add('popup_opened');
-    renderSwiper();
-});
-
-popup.addEventListener('click', (e) => {
-    document.addEventListener('click', (e) => {
-        if (e.target === popup || e.target === slideElement) {
-            popup.classList.remove('popup_opened');
-        }
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === "Escape") {
-            popup.classList.remove('popup_opened');
-        }
-    });
-});
-
-// button
-let buttonToOpenGames = false;
-
-buttonShowAllGames.addEventListener('click', () => {
-    toggleShowGames();
-});
-
 function toggleShowGames() {
     if (!buttonToOpenGames) {
         document.querySelector('.dlss__games-preview_hidden').style.display = 'flex';
@@ -149,18 +137,10 @@ function toggleShowGames() {
     }
 }
 
-let buttonToOpenDrivers = false;
-let windowSmall = false;
-
-buttonShowAllDrivers.addEventListener('click', () => {
-    toggleShowDrivers();
-});
-
 function toggleShowDrivers() {
     if (!buttonToOpenDrivers) {
         driversImages.forEach((item) => {
             item.classList.remove('drivers__image_hidden');
-            // handleChangeWindowSize();
         });
         buttonShowAllDrivers.innerHTML = 'Скрыть';
         return buttonToOpenDrivers = true;
@@ -172,14 +152,7 @@ function toggleShowDrivers() {
     }
 }
 
-//
-window.addEventListener('resize', () => {
-    selectWindowSize();
-    handleChangeWindowSize();
-});
-
 function handleChangeWindowSize() {
-    console.log(windowSmall);
     if (!windowSmall) {
         removeAllHiddenLayers();
         showSixIcons();
@@ -222,7 +195,53 @@ function showFourIcons() {
     }
 }
 
+//Event Listeners
+checkBox.addEventListener('change', () => {
+    renderPreview();
+    renderImages();
+});
 
+preview.addEventListener('click', () => {
+    popup.classList.add('popup_opened');
+    page.classList.add('page-wrapper_blur');
+
+    renderSwiper();
+});
+
+popup.addEventListener('click', (e) => {
+    document.addEventListener('click', (e) => {
+        if (e.target === popup || e.target === slideElement) {
+            popup.classList.remove('popup_opened');
+            page.classList.remove('page-wrapper_blur');
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") {
+            popup.classList.remove('popup_opened');
+            page.classList.remove('page-wrapper_blur');
+        }
+    });
+});
+
+buttonShowAllGames.addEventListener('click', () => {
+    toggleShowGames();
+});
+
+buttonShowAllDrivers.addEventListener('click', () => {
+    toggleShowDrivers();
+});
+
+window.addEventListener('resize', () => {
+    selectWindowSize();
+    handleChangeWindowSize();
+});
+
+leftButton.addEventListener('click', left);
+rightButton.addEventListener('click', right);
+
+//
 renderImages();
 renderPreview();
+renderSwiper();
 selectWindowSize();
