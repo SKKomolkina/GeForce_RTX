@@ -66,6 +66,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "metroSwiper": () => (/* binding */ metroSwiper),
 /* harmony export */   "doomSwiper": () => (/* binding */ doomSwiper),
 /* harmony export */   "minecraftSwiper": () => (/* binding */ minecraftSwiper),
+/* harmony export */   "page": () => (/* binding */ page),
 /* harmony export */   "preview": () => (/* binding */ preview),
 /* harmony export */   "images": () => (/* binding */ images),
 /* harmony export */   "popup": () => (/* binding */ popup),
@@ -76,21 +77,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "buttonShowAllDrivers": () => (/* binding */ buttonShowAllDrivers),
 /* harmony export */   "driversContainer": () => (/* binding */ driversContainer),
 /* harmony export */   "driversImages": () => (/* binding */ driversImages),
-/* harmony export */   "geforceSectionContainer": () => (/* binding */ geforceSectionContainer),
-/* harmony export */   "geforceSectionImage": () => (/* binding */ geforceSectionImage)
+/* harmony export */   "leftButton": () => (/* binding */ leftButton),
+/* harmony export */   "rightButton": () => (/* binding */ rightButton)
 /* harmony export */ });
 // swiper images' id
 var cyberpunkSwiper = document.querySelector('#cyberpunk-swiper');
 var metroSwiper = document.querySelector('#metro-swiper');
 var doomSwiper = document.querySelector('#doom-swiper');
-var minecraftSwiper = document.querySelector('#minecraft-swiper'); //
+var minecraftSwiper = document.querySelector('#minecraft-swiper');
+var page = document.querySelector('.page-wrapper'); //
 
 var preview = document.querySelector('.rays__image-preview');
 var images = document.querySelectorAll('.rays__image');
 var popup = document.querySelector('.popup'); // export const slides = document.querySelectorAll('.popup-image__image');
 
 var slides = document.querySelectorAll('.swiper-images__slide');
-var slideElement = popup.querySelector('.popup-image__image');
+var slideElement = popup.querySelectorAll('.popup-image__image');
 var checkBox = document.querySelector('input[type="checkbox"]'); //
 
 var buttonShowAllGames = document.querySelector('.dlss__button'); //
@@ -99,20 +101,8 @@ var buttonShowAllDrivers = document.querySelector('.drivers__button-show');
 var driversContainer = document.querySelector('.drivers');
 var driversImages = document.querySelectorAll('.drivers__image'); //
 
-var geforceSectionContainer = document.querySelector('.geforce-blue__wrapper');
-var geforceSectionImage = geforceSectionContainer.querySelector('.geforce-blue__image'); //
-// export const imagesArray = {
-//     'cyberpunk': {on: cyberpunkOn, off: cyberpunkOff},
-//     'metro': {on: metroOn, off: metroOff},
-//     'doom': {on: doomOn, off: doomOff},
-//     'minecraft': {on: minecraftOn, off: minecraftOff}
-// }
-// export const indexOfImages = {
-//     'metro': 0,
-//     'doom': 1,
-//     'minecraft': 2,
-//     'cyberpunk': 3
-// }
+var leftButton = document.querySelector('.popup__button_prev');
+var rightButton = document.querySelector('.popup__button_next');
 
 /***/ }),
 
@@ -125,16 +115,6 @@ var geforceSectionImage = geforceSectionContainer.querySelector('.geforce-blue__
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
-
-/***/ }),
-
-/***/ "./src/images/geforce/image-739.png":
-/*!******************************************!*\
-  !*** ./src/images/geforce/image-739.png ***!
-  \******************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = __webpack_require__.p + "a324c7bfb9ec8bd500b4.png";
 
 /***/ }),
 
@@ -12901,8 +12881,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_rays_doom_off_jpg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./images/rays/doom-off.jpg */ "./src/images/rays/doom-off.jpg");
 /* harmony import */ var _images_rays_minecraft_rtx_on_2_jpg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./images/rays/minecraft-rtx-on-2.jpg */ "./src/images/rays/minecraft-rtx-on-2.jpg");
 /* harmony import */ var _images_rays_minecraft_rtx_off_2_jpg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./images/rays/minecraft-rtx-off-2.jpg */ "./src/images/rays/minecraft-rtx-off-2.jpg");
-/* harmony import */ var _images_geforce_image_739_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./images/geforce/image-739.png */ "./src/images/geforce/image-739.png");
-
 
 
 
@@ -12937,38 +12915,54 @@ var cyberpunkImage = new _utils_Image__WEBPACK_IMPORTED_MODULE_2__["default"]({
 }); //
 
 var chosenImage = 3;
-var step = 3;
-var offset = 0; // let slides2;
+var imagesArray = [metroImage, doomImage, minecraftImage, cyberpunkImage]; //
 
-var imagesArray = [metroImage, doomImage, minecraftImage, cyberpunkImage]; // SWIPERS
+var buttonToOpenDrivers = false;
+var buttonToOpenGames = false;
+var windowSmall = false; //
+// SWIPER
 
-function renderSwiper() {
-  var img = document.createElement('img');
-  img.src = imagesArray[step].checkCheckbox(_utils_constants__WEBPACK_IMPORTED_MODULE_3__.checkBox.checked);
-  img.classList.add('swiper-images__slide');
-  img.style.left = offset * 960 + 'px';
-  document.querySelector('.swiper-images');
+function initialSwiper() {
+  var counter = 0;
+  _utils_constants__WEBPACK_IMPORTED_MODULE_3__.slideElement.forEach(function (item) {
+    item.src = imagesArray[counter].checkCheckbox(_utils_constants__WEBPACK_IMPORTED_MODULE_3__.checkBox.checked);
 
-  if (step + 1 === imagesArray.length) {
-    step = 0;
-  } else {
-    step++;
-  }
-
-  offset = 1;
+    if (counter <= imagesArray.length) {
+      counter++;
+    } else {
+      counter = 0;
+    }
+  });
 }
 
-var swiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper', {
-  slidesPerView: 1,
-  loopedSlides: 1,
-  loop: true,
-  modules: [swiper__WEBPACK_IMPORTED_MODULE_1__.Navigation],
-  grabCursor: true,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
+function renderSwiper() {
+  for (var i = 0; i < imagesArray.length; i++) {
+    _utils_constants__WEBPACK_IMPORTED_MODULE_3__.slideElement[i].classList.add('popup-image__image_opacity');
   }
-});
+
+  _utils_constants__WEBPACK_IMPORTED_MODULE_3__.slideElement[chosenImage].classList.remove('popup-image__image_opacity');
+}
+
+function left() {
+  if (chosenImage + 1 === imagesArray.length) {
+    chosenImage = 0;
+  } else {
+    chosenImage++;
+  }
+
+  renderSwiper();
+}
+
+function right() {
+  if (chosenImage - 1 === -1) {
+    chosenImage = _utils_constants__WEBPACK_IMPORTED_MODULE_3__.slideElement.length - 1;
+  } else {
+    chosenImage--;
+  }
+
+  renderSwiper();
+}
+
 var gamesSwiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper-dlss', {
   slidesPerView: 1,
   spaceBetween: 500,
@@ -12979,6 +12973,7 @@ var gamesSwiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper-dl
     clickable: true
   }
 }); //
+// Rays Images render
 
 function renderImages() {
   var counter = 0;
@@ -12988,42 +12983,17 @@ function renderImages() {
     image.addEventListener('click', function () {
       _utils_constants__WEBPACK_IMPORTED_MODULE_3__.preview.src = image.src;
       chosenImage = imageId;
+      renderSwiper();
     });
     counter++;
   });
+  initialSwiper();
 }
 
 function renderPreview() {
   _utils_constants__WEBPACK_IMPORTED_MODULE_3__.preview.src = cyberpunkImage.checkCheckbox(_utils_constants__WEBPACK_IMPORTED_MODULE_3__.checkBox.checked);
-}
+} //
 
-_utils_constants__WEBPACK_IMPORTED_MODULE_3__.checkBox.addEventListener('change', function () {
-  renderPreview();
-  renderImages();
-}); //
-// popup
-
-_utils_constants__WEBPACK_IMPORTED_MODULE_3__.preview.addEventListener('click', function () {
-  _utils_constants__WEBPACK_IMPORTED_MODULE_3__.popup.classList.add('popup_opened');
-  renderSwiper();
-});
-_utils_constants__WEBPACK_IMPORTED_MODULE_3__.popup.addEventListener('click', function (e) {
-  document.addEventListener('click', function (e) {
-    if (e.target === _utils_constants__WEBPACK_IMPORTED_MODULE_3__.popup || e.target === _utils_constants__WEBPACK_IMPORTED_MODULE_3__.slideElement) {
-      _utils_constants__WEBPACK_IMPORTED_MODULE_3__.popup.classList.remove('popup_opened');
-    }
-  });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === "Escape") {
-      _utils_constants__WEBPACK_IMPORTED_MODULE_3__.popup.classList.remove('popup_opened');
-    }
-  });
-}); // button
-
-var buttonToOpenGames = false;
-_utils_constants__WEBPACK_IMPORTED_MODULE_3__.buttonShowAllGames.addEventListener('click', function () {
-  toggleShowGames();
-});
 
 function toggleShowGames() {
   if (!buttonToOpenGames) {
@@ -13039,16 +13009,10 @@ function toggleShowGames() {
   }
 }
 
-var buttonToOpenDrivers = false;
-var windowSmall = false;
-_utils_constants__WEBPACK_IMPORTED_MODULE_3__.buttonShowAllDrivers.addEventListener('click', function () {
-  toggleShowDrivers();
-});
-
 function toggleShowDrivers() {
   if (!buttonToOpenDrivers) {
     _utils_constants__WEBPACK_IMPORTED_MODULE_3__.driversImages.forEach(function (item) {
-      item.classList.remove('drivers__image_hidden'); // handleChangeWindowSize();
+      item.classList.remove('drivers__image_hidden');
     });
     _utils_constants__WEBPACK_IMPORTED_MODULE_3__.buttonShowAllDrivers.innerHTML = 'Скрыть';
     return buttonToOpenDrivers = true;
@@ -13059,17 +13023,9 @@ function toggleShowDrivers() {
     _utils_constants__WEBPACK_IMPORTED_MODULE_3__.buttonShowAllDrivers.innerHTML = 'Показать полностью';
     return buttonToOpenDrivers = false;
   }
-} //
-
-
-window.addEventListener('resize', function () {
-  selectWindowSize();
-  handleChangeWindowSize();
-});
+}
 
 function handleChangeWindowSize() {
-  console.log(windowSmall);
-
   if (!windowSmall) {
     removeAllHiddenLayers();
     showSixIcons();
@@ -13111,10 +13067,48 @@ function showFourIcons() {
       _utils_constants__WEBPACK_IMPORTED_MODULE_3__.driversImages[i].classList.add('drivers__image_hidden');
     }
   }
-}
+} //Event Listeners
+
+
+_utils_constants__WEBPACK_IMPORTED_MODULE_3__.checkBox.addEventListener('change', function () {
+  renderPreview();
+  renderImages();
+});
+_utils_constants__WEBPACK_IMPORTED_MODULE_3__.preview.addEventListener('click', function () {
+  _utils_constants__WEBPACK_IMPORTED_MODULE_3__.popup.classList.add('popup_opened');
+  _utils_constants__WEBPACK_IMPORTED_MODULE_3__.page.classList.add('page-wrapper_blur');
+  renderSwiper();
+});
+_utils_constants__WEBPACK_IMPORTED_MODULE_3__.popup.addEventListener('click', function (e) {
+  document.addEventListener('click', function (e) {
+    if (e.target === _utils_constants__WEBPACK_IMPORTED_MODULE_3__.popup || e.target === _utils_constants__WEBPACK_IMPORTED_MODULE_3__.slideElement) {
+      _utils_constants__WEBPACK_IMPORTED_MODULE_3__.popup.classList.remove('popup_opened');
+      _utils_constants__WEBPACK_IMPORTED_MODULE_3__.page.classList.remove('page-wrapper_blur');
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === "Escape") {
+      _utils_constants__WEBPACK_IMPORTED_MODULE_3__.popup.classList.remove('popup_opened');
+      _utils_constants__WEBPACK_IMPORTED_MODULE_3__.page.classList.remove('page-wrapper_blur');
+    }
+  });
+});
+_utils_constants__WEBPACK_IMPORTED_MODULE_3__.buttonShowAllGames.addEventListener('click', function () {
+  toggleShowGames();
+});
+_utils_constants__WEBPACK_IMPORTED_MODULE_3__.buttonShowAllDrivers.addEventListener('click', function () {
+  toggleShowDrivers();
+});
+window.addEventListener('resize', function () {
+  selectWindowSize();
+  handleChangeWindowSize();
+});
+_utils_constants__WEBPACK_IMPORTED_MODULE_3__.leftButton.addEventListener('click', left);
+_utils_constants__WEBPACK_IMPORTED_MODULE_3__.rightButton.addEventListener('click', right); //
 
 renderImages();
 renderPreview();
+renderSwiper();
 selectWindowSize();
 })();
 
