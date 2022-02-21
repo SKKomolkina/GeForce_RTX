@@ -22,8 +22,6 @@
 }
 
 .footer__logo {
-    grid-area: logo;
-
     transition: opacity .3s ease-in;
 }
 
@@ -65,6 +63,21 @@
     width: 20px;
     height: 20px;
     color: #ffffff;
+}
+
+.footer__icons-wrapper {
+    grid-area: logo;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.footer__icon-rtx {
+    margin-left: 37px;
+
+    max-width: 134px;
 }
 
 .footer__copyright {
@@ -157,7 +170,7 @@
 
 @media (max-width: 739px) {
     .footer {
-        padding-top: 22px;
+        padding-top: 43px;
         padding-bottom: 41px;
     }
 
@@ -193,6 +206,15 @@
     .footer__copyright {
         margin: 0 auto;
         text-align: center;
+    }
+
+    .footer__icons-wrapper {
+        flex-direction: column;
+    }
+
+    .footer__icon-rtx {
+        margin-left: 0;
+        margin-top: 27px;
     }
 }
 
